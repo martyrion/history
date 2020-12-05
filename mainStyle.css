@@ -49,7 +49,7 @@ section.mainContent {
   row-gap: 24px;
 }
 
-.mainContent article {
+.mainContent article.summary {
   background-size: 100%;
   opacity: 0.7;
   box-shadow: 2px black;
@@ -57,6 +57,14 @@ section.mainContent {
   transition: scale 200ms;
   justify-items: center;
   box-shadow: 1px 1px 4px 2px rgba(49, 94, 73, 1);
+}
+
+
+article.summary:hover{
+  scale: 103%;
+  opacity: 1;
+  box-shadow: 2px 2px 4px 4px rgba(49, 94, 73, 1);
+
 }
 
 #spacer {
@@ -176,7 +184,42 @@ header .menu-icon {
 }
 
 
+#details {
+  display: none;
+  position: fixed;
+  top: 84px;
+  left: 0px;
+  right: 0px;
+  bottom: 48px;
+  margin: 18px;
+  background: url('pictures/paper.jpg');
+  opacity: 0;
+  transition: opacity 1s;
+  z-index: 90;
+}
 
+#details.show{
+  display: block;
+  opacity: 1;
+
+ 
+}
+
+#overlay{
+display:none;
+position: fixed;
+left: 0;
+top: 0;
+width: 100vw;
+height: 100vh;
+background-color: black; 
+opacity: 0.6;
+z-index: 10;
+}
+
+#overlay.visible{
+  display:block;
+}
 
 #prehistoric {
   background-image: url(pictures/neolithic.png);
@@ -228,8 +271,12 @@ header .menu-icon {
     display: flex;
   }
 
-  section.mainContent {
+  section.mainContent{
     margin-left: 144px;
+  }
+
+  #details{
+    margin-left: 138px;
   }
 
   header {

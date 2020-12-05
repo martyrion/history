@@ -56,37 +56,37 @@
         <h2></h2>
         <p></p>
       </div>
-      <article id="prehistoric">
+      <article id="prehistoric" class="summary" onclick="clickEra()">
         <h3></h3>
       </article>
-      <article id="geometric">
+      <article id="geometric" class="summary">
         <h3></h3>
       </article>
-      <article id="classical">
+      <article id="classical" class="summary">
         <h3></h3>
       </article>
-      <article id="hellenistic">
+      <article id="hellenistic" class="summary">
         <h3></h3>
       </article>
-      <article id="roman">
+      <article id="roman" class="summary">
         <h3></h3>
       </article>
-      <article id="byzantine">
+      <article id="byzantine" class="summary">
         <h3></h3>
       </article>
-      <article id="frankish">
+      <article id="frankish" class="summary">
         <h3></h3>
       </article>
-      <article id="venice">
+      <article id="venice" class="summary">
         <h3></h3>
       </article>
-      <article id="ottomans">
+      <article id="ottomans" class="summary">
         <h3></h3>
       </article>
-      <article id="english">
+      <article id="english" class="summary">
         <h3></h3>
       </article>
-      <article id="independence">
+      <article id="independence" class="summary">
         <h3></h3>
       </article>
       <div id="spacer"></div>
@@ -96,9 +96,15 @@
       <span id="credits"></span
       ><img src="pictures/greek-helmet-50.png" alt="greek pillar green" />
     </footer>
-    <article id="details"></article>
+    <article id="details">
+      <h2></h2>
+      <button onclick="closeEra()">CLOSE</button>
+    </article>
+    <div id="overlay"></div>
+    
   </body>
   <script>
+    
     const languageFeatures = [
       
       { selector: "#title", text: "A Cyprus chronicle.", textGR: "Χρονικό της Κύπρου." },
@@ -171,9 +177,7 @@
         selector: "#independence h3",
         text: "Independence 1960 - today",
         textGR: "Ανεξαρτησία 1960 - σήμερα μ.Χ.",
-      },
-      
-    ];
+      }];
 
     const quotes = [
 
@@ -188,7 +192,7 @@
           {id:8, text: "", textGR: ""},
           {id:9, text: "", textGR: ""},
           {id:10, text: "", textGR: ""},
-    ]
+    ];
 
 
   var quoteNum = Math.floor(Math.random() * 10); 
@@ -211,8 +215,21 @@
       document.getElementById('gr').classList.add('selected-language');
     };
     
+
+    clickEra = ()=> {
+      document.getElementById("overlay").classList.add("visible");
+      document.getElementById("details").classList.add("show");
+    }
+
+    closeEra = () => {
+      document.getElementById("overlay").classList.remove("visible");
+      document.getElementById("details").classList.remove("show");
+      
+    }
     setEnglish();
+
     
+
    
   </script>
 </html>
