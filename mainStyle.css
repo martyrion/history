@@ -226,7 +226,12 @@ z-index: 10;
   right:0px;
   top: 0px;
   scale: 70%;
-  opacity: 0.8;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+#closeBtn:hover{
+  opacity: 0.9;
 }
 
 #prehistoric {
