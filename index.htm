@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Cyprus history walkthrough</title>
+    <link rel="stylesheet" href="mainStyle.css" />
+    <script></script>
+  </head>
+
+  <body>
+    <header>
+      <img class="logo" src="pictures/olive4.png" alt="olive tree green" />
+      <h1 id="title" class="title">A Cyprus chronicle.</h1>
+      <img class="menu-icon" src="pictures/menu.png" alt />
+      <nav class="navBar">
+        <a id="about-me" href=""></a>
+        <img
+          id="gr"
+          src="pictures/greece.png"
+          alt=""
+          onclick="setGreek();"
+        />
+        <img
+          id="en"
+          src="pictures/united-kingdom.png"
+          alt=""
+          onclick="setEnglish();"
+        />
+      </nav>
+    </header>
+    <aside class="extras">
+      <nav>
+        <span id="linkTitle"></span>
+        <a
+          id="linkA"
+          href="http://www.tourism.gov.cy/tourism/tourism.nsf/home_en/home_en?openform"
+          target="_blank"
+        ></a>
+        <a
+          id="linkB"
+          href="http://www.mcw.gov.cy/mcw/da/da.nsf/DMLindex_en/DMLindex_en"
+          target="_blank"
+        ></a>
+        <a
+          id="linkC"
+          href="https://www.chooseyourcyprus.com/history/sites-and-monuments.html"
+          target="_blank"
+        ></a>
+        <span id="interestingTitle"></span>
+        <p id="fact"></p>
+      </nav>
+    </aside>
+    <section class="mainContent">
+      <div>
+        <h2></h2>
+        <p></p>
+      </div>
+      <article id="prehistoric">
+        <h3></h3>
+      </article>
+      <article id="geometric">
+        <h3></h3>
+      </article>
+      <article id="classical">
+        <h3></h3>
+      </article>
+      <article id="hellenistic">
+        <h3></h3>
+      </article>
+      <article id="roman">
+        <h3></h3>
+      </article>
+      <article id="byzantine">
+        <h3></h3>
+      </article>
+      <article id="frankish">
+        <h3></h3>
+      </article>
+      <article id="venice">
+        <h3></h3>
+      </article>
+      <article id="ottomans">
+        <h3></h3>
+      </article>
+      <article id="english">
+        <h3></h3>
+      </article>
+      <article id="independence">
+        <h3></h3>
+      </article>
+      <div id="spacer"></div>
+    </section>
+    <div></div>
+    <footer>
+      <span id="credits"></span
+      ><img src="pictures/greek-helmet-50.png" alt="greek pillar green" />
+    </footer>
+    <article id="details"></article>
+  </body>
+  <script>
+    const languageFeatures = [
+      
+      { selector: "#title", text: "A Cyprus chronicle.", textGR: "Χρονικό της Κύπρου." },
+      { selector: "#about-me", text: "About me", textGR: "Για εμένα" },
+      { selector: ".mainContent h2", text: "10000 years of history", textGR: "10000 χρόνια ιστορίας" },
+      {
+        selector: ".mainContent p",
+        text:
+          "Cyprus is the third largest island in the Mediterranean. It is situated at the crossroads of three continents – Europe, Asia and Africa. This geographic position has since antiquity played an important part in the island’s turbulent history. Its prehistoric age inhabitants were joined by the Mycenaean Greeks 3500 years ago, who introduced and established their civilisation, thus permanently instilling the island’s Greek roots.",
+           textGR: "Η Κύπρος είναι το τρίτο σε μέγεθος νησί της Μεσογείου. Βρίσκεται στο σταυροδρόμι τριών ηπείρων - Ευρώπης, Ασίας και Αφρικής. Αυτή η γεωγραφική θέση έχει παίξει σημαντικό ρόλο στην πολυτάραχη ιστορία του νησιού. Οι προϊστορικοί του κάτοικοι αναμίχθηκαν με τους Μυκηναίους Έλληνες αποίκους 3500 χρόνια πρίν, οι οποίοι εισήγαγαν και καθιέρωσαν τον Ελληνικό πολιτισμό από τότε."
+        },
+      { selector: "#linkTitle", text: "USEFUL LINKS", textGR: "ΧΡΗΣΙΜΟΙ ΣΥΝΔΕΣΜΟΙ"},
+      { selector: "#linkA", text: "Ministry of Tourism", textGR: "Υπουργείο Τουρισμού" },
+      { selector: "#linkB", text: "Department of antiquities", textGR: "Τμήμα αρχαιοτήτων" },
+      { selector: "#linkC", text: "Cyprus monuments", textGR: "Μνημεία της Κύπρου" },
+      { selector: "#interestingTitle", text: "DID YOU KNOW?", textGR: "ΗΞΕΡΕΣ ΟΤΙ;" },
+      { selector: "#credits", text: "Dimitrios Fkiaras - December 2020", textGR: "Δημήτριος Φκιαράς - Δεκέμβριος 2020" },
+
+      {
+        selector: "#prehistoric h3",
+        text: "Prehistoric era 8200 - 1050 B.C.",
+        textGR: "Προϊστορική εποχή 8200 - 1050 π.Χ.",
+      },
+      {
+        selector: "#geometric h3",
+        text: "Geometric era 1050 - 480 B.C.",
+        textGR: "Γεωμετρική εποχή 1050 - 480 π.Χ.",
+      },
+      {
+        selector: "#classical h3",
+        text: "Classical era 480-330 B.C.",
+        textGR: "Κλασσική εποχή 480 - 330 π.Χ.",
+      },
+      {
+        selector: "#hellenistic h3",
+        text: "Hellenistic era 330-30 B.C.",
+        textGR: "Ελληνιστική εποχή 330 - 30 π.Χ.",
+      },
+      {
+        selector: "#roman h3",
+        text: "Roman era 30 B.C. - 330 A.D.",
+        textGR: "Ρωμαϊκή εποχή 30 π.Χ - 330 μ.Χ.",
+      },
+      {
+        selector: "#byzantine h3",
+        text: "Byzantine era 330 - 1191 A.D.",
+        textGR: "Bυζαντινή εποχή 330 - 1191 μ.Χ.",
+      },
+      {
+        selector: "#frankish h3",
+        text: "Frankish rule 1191 - 1489 A.D.",
+        textGR: "Φραγκοκρατία 1191 - 1489 μ.Χ.",
+      },
+      {
+        selector: "#venice h3",
+        text: "Venice rule 1489 - 1571 A.D.",
+        textGR: "Βενετοκρατία 1489 - 1571 μ.Χ.",
+      },
+      {
+        selector: "#ottomans h3",
+        text: "Ottoman rule 1571 - 1878 A.D.",
+        textGR: "Τουρκοκρατία 1571 - 1878 μ.Χ.",
+      },
+      {
+        selector: "#english h3",
+        text: "English rule 1878 - 1960 A.D.",
+        textGR: "Αγγλοκρατία 1878 - 1960 μ.Χ.",
+      },
+      {
+        selector: "#independence h3",
+        text: "Independence 1960 - today",
+        textGR: "Ανεξαρτησία 1960 - σήμερα μ.Χ.",
+      },
+      
+    ];
+
+    const quotes = [
+
+          {id:0, text: "Zenon Kiteus was a philosopher from Kition, near today's city of Larnaka who created the Stoic philosophy school in Athens", textGR: "O Ζήνων ο Κιτιεύς ήταν φιλόσοφος από το Κίτιον, κοντά στην σημερινή Λάρνακα, ο οποίος ίδρυσε την σχολή των Στωικών φιλοσόφων στην Αθήνα."},
+          {id:1, text: "", textGR: ""},
+          {id:2, text: "", textGR: ""},
+          {id:3, text: "", textGR: ""},
+          {id:4, text: "", textGR: ""},
+          {id:5, text: "", textGR: ""},
+          {id:6, text: "", textGR: ""},
+          {id:7, text: "", textGR: ""},
+          {id:8, text: "", textGR: ""},
+          {id:9, text: "", textGR: ""},
+          {id:10, text: "", textGR: ""},
+    ]
+
+
+  var quoteNum = Math.floor(Math.random() * 10); 
+
+    setEnglish = () => {
+      languageFeatures.map((obj) => {
+        document.querySelector(obj.selector).innerHTML = obj.text;
+      });
+      document.getElementById("fact").innerHTML = quotes[quoteNum].text;
+      document.getElementById('en').classList.add('selected-language');
+      document.getElementById('gr').classList.remove('selected-language');
+    };
+    
+    setGreek = () => {
+      languageFeatures.map((obj) => {
+        document.querySelector(obj.selector).innerHTML = obj.textGR;
+      });
+      document.getElementById("fact").innerHTML = quotes[quoteNum].textGR;
+      document.getElementById('en').classList.remove('selected-language');
+      document.getElementById('gr').classList.add('selected-language');
+    };
+    
+    setEnglish();
+    
+   
+  </script>
+</html>
