@@ -98,7 +98,7 @@
     </footer>
     <article id="details">
       <h2></h2>
-      <button onclick="closeEra()">CLOSE</button>
+      <img id="closeBtn" src="pictures/close-60.png" alt="" onclick="closeEra()">
     </article>
     <div id="overlay"></div>
     
@@ -219,6 +219,7 @@
     clickEra = ()=> {
       document.getElementById("overlay").classList.add("visible");
       document.getElementById("details").classList.add("show");
+      alert(this);
     }
 
     closeEra = () => {
