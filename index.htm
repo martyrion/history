@@ -15,8 +15,13 @@
       <img  class="menu-icon" src="pictures/menu.png" alt="menu icon" onclick="openMenu()"/>
     </header>
     <nav id= "navBar" class="navBar">
-     
-     
+      <img
+        id="menuClose"
+      class="closeBtn no-visibility"
+        src="pictures/close-60.png"
+        alt="close x sign"
+        onclick="closeMenu()"
+      />
       <img id="gr" src="pictures/greece.png" alt="greek flag" onclick="setGreek()" />
       <img
         id="en"
@@ -94,7 +99,7 @@
     </footer>
     <article id="details">
       <img
-        id="closeBtn"
+        class="closeBtn"
         src="pictures/close-60.png"
         alt="close x sign"
         onclick="closeEra()"
@@ -306,6 +311,13 @@
       const openMenu = () => {
         document.getElementById("navBar").classList.add("pill");
         document.getElementById("overlay").classList.add("visible");
+        document.getElementById("menuClose").classList.remove("no-visibility");
+      }
+
+      const closeMenu = () => {
+        document.getElementById("navBar").classList.remove("pill");
+        document.getElementById("overlay").classList.remove("visible");
+        document.getElementById("menuClose").classList.add("no-visibility");
       }
 
 

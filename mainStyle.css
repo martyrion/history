@@ -195,13 +195,28 @@ header .menu-icon {
   right: 24px;
   border-radius: 4px;
   width: 120px;
-  height: 64px;
+  height: 128px;
   justify-items: center;
   align-items: center;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: 1fr 1fr;
   grid-row: border;
   z-index: 20;
+}
+
+img#menuClose{
+  grid-column: 2/2;
+  grid-row:1/1;
+}
+
+.navBar.pill #gr{
+  grid-column: 1/2;
+  grid-row:2/2;
+}
+
+.navBar.pill #en{
+  grid-column: 2/2;
+  grid-row:2/2;
 }
 
 img#gr,
@@ -284,7 +299,11 @@ z-index: 10;
   display:block;
 }
 
-#closeBtn{
+.no-visibility{
+  display: none;
+}
+
+.closeBtn{
   position: absolute;
   right: 12px;
   top: 12px;
@@ -293,7 +312,7 @@ z-index: 10;
   cursor: pointer;
 }
 
-#closeBtn:hover{
+.closeBtn:hover{
   opacity: 0.9;
 }
 
