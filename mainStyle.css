@@ -183,6 +183,9 @@ header .menu-icon {
   padding: 6px;
 }
 
+.no-overflow{
+  /* overflow: hidden; */
+}
 
 #details {
   display: none;
@@ -192,7 +195,8 @@ header .menu-icon {
   right: 0px;
   bottom: 48px;
   margin: 18px;
-  background: url('pictures/paper.jpg');
+  color: black;
+  background-color: white;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
   opacity: 0;
   border-radius: 6px;
@@ -201,8 +205,31 @@ header .menu-icon {
 }
 
 #details.show{
-  display: block;
+  display: grid;
+  grid-template-rows: 48px 1fr;
   opacity: 0.95;
+}
+
+#details p{
+  margin:24px;
+  text-align: justify;
+  overflow: auto;
+}
+
+#details p::first-letter{
+  font-size: 3em;
+  padding: 0.1em;
+  margin:0.1em;
+  background-color: gray;
+  font-weight: bold;
+  line-height: 1;
+  color: orange;
+  float: left;
+}
+
+#details h2{
+  font-size: 1.2em;
+  padding: 18px 0px 36px 24px;
 }
 
 #overlay{
