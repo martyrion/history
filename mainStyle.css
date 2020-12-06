@@ -231,6 +231,7 @@ img#en {
   bottom: 48px;
   margin: 18px;
   color: black;
+  line-height: 1.5;
   background-color: white;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
   opacity: 0;
@@ -285,9 +286,9 @@ z-index: 10;
 
 #closeBtn{
   position: absolute;
-  right:0px;
-  top: 0px;
-  scale: 70%;
+  right: 12px;
+  top: 12px;
+  width: 2.5em;
   opacity: 0.7;
   cursor: pointer;
 }
