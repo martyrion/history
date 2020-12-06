@@ -48,41 +48,41 @@
     </aside>
     <section class="mainContent">
       <div>
-        <h2></h2>
+        <h2>10000 years of history</h2>
         <p></p>
       </div>
       <article id="prehistoric" class="summary" onclick="clickEra(this)">
-        <h3></h3>
+        <h3>Prehistoric era</h3>
       </article>
       <article id="geometric" class="summary" onclick="clickEra(this)">
-        <h3></h3>
+        <h3>Geometric & Archaic era </h3>
       </article>
       <article id="classical" class="summary" onclick="clickEra(this)">
-        <h3></h3>
+        <h3>Classical era</h3>
       </article>
       <article id="hellenistic" class="summary" onclick="clickEra(this)">
-        <h3></h3>
+        <h3>Hellenestic era </h3>
       </article>
       <article id="roman" class="summary" onclick="clickEra(this)">
-        <h3></h3>
+        <h3>Roman rule</h3>
       </article>
       <article id="byzantine" class="summary" onclick="clickEra(this)">
-        <h3></h3>
+        <h3>Byzantine era</h3>
       </article>
       <article id="frankish" class="summary" onclick="clickEra(this)">
-        <h3></h3>
+        <h3>Frankish rule</h3>
       </article>
       <article id="venice" class="summary" onclick="clickEra(this)">
-        <h3></h3>
+        <h3>Venice rule</h3>
       </article>
       <article id="ottomans" class="summary" onclick="clickEra(this)">
-        <h3></h3>
+        <h3>Ottoman rule</h3>
       </article>
       <article id="english" class="summary" onclick="clickEra(this)">
-        <h3></h3>
+        <h3>English rule</h3>
       </article>
       <article id="independence" class="summary" onclick="clickEra(this)">
-        <h3></h3>
+        <h3>Independence</h3>
       </article>
       <div id="spacer"></div>
     </section>
@@ -98,258 +98,259 @@
         alt=""
         onclick="closeEra()"
       />
-      <h2></h2>
+      <h2>Era details</h2>
       <p></p>
     </article>
     <div id="overlay"></div>
+    <script>
+      let lang = "en";
+      const generalFeatures = [
+        {
+          selector: "#title",
+          text: "A Cyprus chronicle.",
+          textGR: "Χρονικό της Κύπρου.",
+        },
+        { selector: "#about-me", text: "About me", textGR: "Για εμένα" },
+        {
+          selector: ".mainContent h2",
+          text: "10000 years of history",
+          textGR: "10000 χρόνια ιστορίας",
+        },
+        {
+          selector: ".mainContent p",
+          text:
+            "Cyprus is the third largest island in the Mediterranean. It is situated at the crossroads of three continents – Europe, Asia and Africa. This geographic position has since antiquity played an important part in the island’s turbulent history. Its prehistoric age inhabitants were joined by the Mycenaean Greeks 3500 years ago, who introduced and established their civilisation, thus permanently instilling the island’s Greek roots.",
+          textGR:
+            "Η Κύπρος είναι το τρίτο σε μέγεθος νησί της Μεσογείου. Βρίσκεται στο σταυροδρόμι τριών ηπείρων - Ευρώπης, Ασίας και Αφρικής. Αυτή η γεωγραφική θέση έχει παίξει σημαντικό ρόλο στην πολυτάραχη ιστορία του νησιού. Οι προϊστορικοί του κάτοικοι αναμίχθηκαν με τους Μυκηναίους Έλληνες αποίκους 3500 χρόνια πρίν, οι οποίοι εισήγαγαν και καθιέρωσαν τον Ελληνικό πολιτισμό από τότε.",
+        },
+        {
+          selector: "#linkTitle",
+          text: "USEFUL LINKS",
+          textGR: "ΧΡΗΣΙΜΟΙ ΣΥΝΔΕΣΜΟΙ",
+        },
+        {
+          selector: "#linkA",
+          text: "Ministry of Tourism",
+          textGR: "Υπουργείο Τουρισμού",
+        },
+        {
+          selector: "#linkB",
+          text: "Department of antiquities",
+          textGR: "Τμήμα αρχαιοτήτων",
+        },
+        {
+          selector: "#linkC",
+          text: "Cyprus monuments",
+          textGR: "Μνημεία της Κύπρου",
+        },
+        {
+          selector: "#interestingTitle",
+          text: "DID YOU KNOW?",
+          textGR: "ΗΞΕΡΕΣ ΟΤΙ;",
+        },
+        {
+          selector: "#credits",
+          text: "Dimitrios Fkiaras - December 2020",
+          textGR: "Δημήτριος Φκιαράς - Δεκέμβριος 2020",
+        },
+  
+        {
+          selector: "#prehistoric h3",
+          text: "Prehistoric era 8200 - 1050 B.C.",
+          textGR: "Προϊστορική εποχή 8200 - 1050 π.Χ.",
+        },
+        {
+          selector: "#geometric h3",
+          text: "Geometric era 1050 - 480 B.C.",
+          textGR: "Γεωμετρική εποχή 1050 - 480 π.Χ.",
+        },
+        {
+          selector: "#classical h3",
+          text: "Classical era 480-330 B.C.",
+          textGR: "Κλασσική εποχή 480 - 330 π.Χ.",
+        },
+        {
+          selector: "#hellenistic h3",
+          text: "Hellenistic era 330-30 B.C.",
+          textGR: "Ελληνιστική εποχή 330 - 30 π.Χ.",
+        },
+        {
+          selector: "#roman h3",
+          text: "Roman era 30 B.C. - 330 A.D.",
+          textGR: "Ρωμαϊκή εποχή 30 π.Χ - 330 μ.Χ.",
+        },
+        {
+          selector: "#byzantine h3",
+          text: "Byzantine era 330 - 1191 A.D.",
+          textGR: "Bυζαντινή εποχή 330 - 1191 μ.Χ.",
+        },
+        {
+          selector: "#frankish h3",
+          text: "Frankish rule 1191 - 1489 A.D.",
+          textGR: "Φραγκοκρατία 1191 - 1489 μ.Χ.",
+        },
+        {
+          selector: "#venice h3",
+          text: "Venice rule 1489 - 1571 A.D.",
+          textGR: "Βενετοκρατία 1489 - 1571 μ.Χ.",
+        },
+        {
+          selector: "#ottomans h3",
+          text: "Ottoman rule 1571 - 1878 A.D.",
+          textGR: "Τουρκοκρατία 1571 - 1878 μ.Χ.",
+        },
+        {
+          selector: "#english h3",
+          text: "English rule 1878 - 1960 A.D.",
+          textGR: "Αγγλοκρατία 1878 - 1960 μ.Χ.",
+        },
+        {
+          selector: "#independence h3",
+          text: "Independence 1960 - today",
+          textGR: "Ανεξαρτησία 1960 - σήμερα μ.Χ.",
+        },
+      ];
+  
+      const quotes = [
+        {
+          id: 0,
+          text:
+            "Zenon Kiteus was a philosopher from Kition, near today's city of Larnaka who created the Stoic philosophy school in Athens",
+          textGR:
+            "O Ζήνων ο Κιτιεύς ήταν φιλόσοφος από το Κίτιον, κοντά στην σημερινή Λάρνακα, ο οποίος ίδρυσε την σχολή των Στωικών φιλοσόφων στην Αθήνα.",
+        },
+        { id: 1, text: "", textGR: "" },
+        { id: 2, text: "", textGR: "" },
+        { id: 3, text: "", textGR: "" },
+        { id: 4, text: "", textGR: "" },
+        { id: 5, text: "", textGR: "" },
+        { id: 6, text: "", textGR: "" },
+        { id: 7, text: "", textGR: "" },
+        { id: 8, text: "", textGR: "" },
+        { id: 9, text: "", textGR: "" },
+        { id: 10, text: "", textGR: "" },
+      ];
+  
+      const descriptions = [
+        {
+          identifier: "prehistoric",
+          text:
+            "The  very  first  signs  of  permanent  settlement  in  Cyprus  date  from  the  Neolithic Age (8200-3800 BC). While copper is mined in small quantities during the next period, the Chalcolithic Age (3800-2400 BC), this brings about  only  minor  changes  in  the  way  of  life  of  the  people.  In  both  the  Neolithic  and  the  Chalcolithic  Ages  the  Cypriots  lived  in  single  room  dwellings,  used  stone  tools  and  vessels,  made  jewellery  out  of  picrolite,  ate fish, cereals, lamb and goat’s meat and buried their dead within their settlements. The earliest pottery found dates back to the 5th millennium BC.The  first  significant  cultural  changes  affecting  all  aspects  of  society  took  place around 2400-2200 BC,   towards the end of the Chalcolithic Age and at the beginning of the Early Bronze Age. Instead of building cylindrically-shaped dwellings, people began to construct multi-room oblong structures, started to process copper in jewellery, applied the plough for agriculture and began to bury their dead in organised cemeteries. Despite the fact that these developments contributed to the economic growth that occurred both during  the  Early  (2400-1900  BC)  and  Middle  (1900-1650  BC)  Bronze  Age periods, people still lived in small hinterland villages. Communication and trade with the surrounding Mediterranean lands was limited. The Late Bronze Age (1650-1050 BC) was the first period of prehistoric Cyprus  when  tangible  and  irrefutable  evidence  exists  that  a  number  of  significant  developments  occurred.  These  include  the  establishment  of  coastal towns, intensive mining of copper and other metals, development of a writing script, contact and trade with the neighbouring regions of Egypt, the Middle East, the Aegean and the wider Eastern Mediterranean area. From the latter part of the 13th century BC successive waves of mainland Greeks  begin  to  settle  in  Cyprus.  Hence,  Mycenaean  pottery  is  imported  in  great  quantities  from  the  Aegean  (Greece)  and  used  extensively,  both  in everyday life as well as for religious ceremonies. Later it is reproduced locally and incorporated in the island’s ceramic tradition.",
+          textGR:
+            "Tα  πρωιμότερα  στοιχεία  μιας  καθ’  ολοκληρίαν  μόνιμης  εγκατάστασης στην  Κύπρο  παρουσιάζονται  στη  Νεολιθική  περίοδο  (8200-3800  π.Χ.). Αν και ο χαλκός εμφανίζεται σε μικρές ποσότητες την επόμενη περίοδο, τη Χαλκολιθική (3800-2400 π.Χ.), το γεγονός αυτό σηματοδοτεί μικρές αλλαγές  στον  τρόπο  ζωής  των  ανθρώπων.  Οι  άνθρωποι  και  στις  δύο περιόδους, τη Νεολιθική και τη Χαλκολιθική, ζουν σε μονόχωρες κατοικίες, χρησιμοποιούν λίθινα εργαλεία και αγγεία, κατασκευάζουν τα κοσμήματά τους από πικρόλιθο, τρώνε ψάρια, δημητριακά, αρνίσιο και κατσικίσιο κρέας και θάβουν τις περισσότερες φορές τους νεκρούς μέσα στους οικισμούς. Τα πρώτα πήλινα σκεύη εμφανίζονται την 5η χιλιετία π.Χ.Η  πρώτη  σημαντική  πολιτισμική  αλλαγή  λαμβάνει  χώρα  στο  τέλος  της Χαλκολιθικής  περιόδου  και  τις  αρχές  της  Πρώιμης  Εποχής  του  Χαλκού (περίπου 2400-2200 π.Χ.) και σταδιακά επηρεάζει όλους τους τομείς της κοινωνίας. Τα σπίτια από κυκλικά μετατρέπονται σε ορθογώνια κτίσματα με πολλά δωμάτια, αρχίζει η κατεργασία χαλκού, ο οποίος χρησιμοποιείται για την κατασκευή κοσμημάτων, το άροτρο εισάγεται στην αγροτική καλλιέργεια και οι ταφές γίνονται σε νεκροταφεία. Παρά το γεγονός ότι οι εξελίξεις αυτές διευκολύνουν την οικονομική ανάπτυξη που παρατηρείται και στις επόμενες περιόδους  της  Πρώιμης  (2400-1900  π.Χ.)  και  της  Μέσης  Εποχής  του Χαλκού (1900-1650 π.Χ.), οι άνθρωποι ζουν ακόμα σε μικρά χωριά στην ενδοχώρα. Οι εμπορικές σχέσεις με τις γύρω περιοχές της Μεσογείου είναι περιορισμένες.Η  Ύστερη  Εποχή  του  Χαλκού  (1650-1050  π.Χ.)  είναι  η  πρώτη περίοδος  της  Κυπριακής  Προϊστορίας  κατά  την  οποία  επιβεβαιώνονται αδιαμφισβήτητα  τεκμήρια  για  έναν  αριθμό  σημαντικών  καινοτομιών.  Σ’ αυτές περιλαμβάνονται: η δημιουργία παράλιων αστικών κέντρων, όπως η Έγκωμη και το Κίτιο, με δημόσια και θρησκευτικά κτίρια, η εντατικοποίηση της παραγωγής των μετάλλων, η ανάπτυξη της γραφής και οι αναπτυγμένες σχέσεις  με  τις  γειτονικές  περιοχές.  Όλα  αυτά  συνδέονται  άμεσα  με  την επέκταση της παραγωγής του χαλκού και τη συμμετοχή της Κύπρου στο διεθνές  εμπόριο  με  την  Αίγυπτο,  την  Εγγύς  Ανατολή,  το  Αιγαίο  και  τη ευρύτερη Δυτική Μεσόγειο.Από το τέλος του 13ου αιώνα διαδοχικά κύματα Αχαιών Ελλήνων αρχίζουν να εγκαθίστανται στην Κύπρο. Η Μυκηναϊκή κεραμική αρχικά εισάγεται σε μεγάλες ποσότητες από το Αιγαίο (Ελλάδα) και χρησιμοποιείται τόσο στην καθημερινή  ζωή,  όσο  και  στη  θρησκεία.  Τελικά  αντιγράφεται  τοπικά  και ενσωματώνεται στην τοπική κεραμική παράδοση.",
+        },
+        {
+          identifier: "geometric",
+          text:
+            "Two major developments marked the transition from the Prehistoric Age to Historic periods – the first was political and the second technological.The first major development was the establishment of new city-kingdoms. Up until the 11th century BC, all the large cities of the Late Bronze age had  been  destroyed  by  natural  causes,  possibly  earthquakes.  Folk  tales  that  the  new  cities  were  created  by  heroes  of  the  Trojan  War  on  their  return from the conflict correlate to historical facts, namely the last wave of  Achaean  Greek  settlement,  which  led  to  the  eventual  hellenisation  of  Cyprus, with the adoption of Greek culture and language. From the 10th century BC onwards the ties between Cyprus and Greek islands such as Euboea and Crete became particularly close.The  second  major  development  was  the  use  of  iron  in  metallurgy,  which  marked the start of a new era, the Iron Age. At first iron was used only in jewellery,  but  it  gradually  replaced  copper  in  tool  making.  The  Iron  Age  includes the Geometric period (1050 - 750 BC), in view of the fact that geometrical motifs were mainly used in decorating pottery. This period coincided with the arrival of the Phoenicians in Cyprus and their colonisation of the large coastal Mycenaean city of Kition.Typical  Phoenician  black-on-red  colour  pottery  was  introduced  and  later  produced locally on the island. The beginning of the next period, the Archaic period (750-480 BC), was marked by the subjugation of Cyprus to the Assyrians. During this period, the Cypriot city-kingdoms of Salamis, Kition, Amathous, Kourion, Idalion, Palaipafos, Marion, Soloi and Tamassos remained independent for as long as they were in a position to pay a subjugation tax to the Assyrian ruler.After  the  rule  of  the  Assyrian  hegemony,  the  Egyptian  Pharaoh  Amasis  took over Cyprus. Typical of this period were the strong Greek and eastern influences evident in all aspects of life, more so in art and religion.",
+          textGR:
+            "Δύο  μεγάλες  αλλαγές,  η  πρώτη  πολιτική  και  η  δεύτερη  τεχνολογική, σηματοδοτούν τη μετάβαση από την Προϊστορική περίοδο στους Ιστορικούς χρόνους.Η πρώτη αλλαγή είναι η ίδρυση καινούριων πόλεων-βασιλείων στην Κύπρο. Μέχρι τον 11ο αιώνα π.Χ., όλες οι μεγάλες πόλεις της Ύστερης Εποχής του Χαλκού είχαν καταστραφεί από φυσικά αίτια, πιθανώς από σεισμό. Οι μύθοι ότι οι καινούργιες πόλεις ιδρύθηκαν από τους ήρωες του Τρωικού πολέμου κατά  την  επιστροφή  τους  από  τον  πόλεμο  αντανακλούν  ένα  ιστορικό γεγονός: το τελευταίο κύμα του Αχαϊκού αποικισμού, που οδήγησε τελικά στον εξελληνισμό της Κύπρου, με την υιοθέτηση του ελληνικού πολιτισμού και γλώσσας. Από τον 10ο αιώνα π.Χ. και μετά παρατηρούνται ιδιαίτερα στενές σχέσεις μεταξύ Κύπρου και Εύβοιας και μεταξύ Κύπρου και Κρήτης.  Η δεύτερη μεγάλη αλλαγή είναι η χρήση του σιδήρου στη μεταλλουργία, η οποία σηματοδοτεί ταυτόχρονα την αρχή μιας καινούριας εποχής, της Εποχής του Σιδήρου, που αρχίζει το 1050 π.Χ. Ο σίδηρος αρχικά χρησιμοποιείται μόνο για την κατασκευή κοσμημάτων, αλλά σταδιακά αντικαθιστά τον χαλκό και χρησιμοποιείται και για την κατασκευή χρηστικών αντικειμένων, όπως μαχαίρια.  Η  πρώτη  περίοδος  της  Εποχής  του  Σιδήρου  είναι  γνωστή  ως Γεωμετρική περίοδος, εξαιτίας της κυριαρχίας της γεωμετρικής διακόσμησης των κεραμικών αγγείων. Η περίοδος αυτή συμπίπτει χρονικά με την άφιξη των  Φοινίκων  στην  Κύπρο  και  του  αποικισμού  της  μεγάλης  παράλιας μυκηναϊκής πόλης του Κιτίου. Τυπική Φοινικική κεραμική, όπως η Μελανή επί Ερυθρού, εισάγεται αλλά και κατασκευάζεται στο νησί.Η  αρχή  της  επόμενης  περιόδου,  της  Αρχαϊκής  (750-480  π.Χ.), σηματοδοτείται  από  την  υποταγή  της  Κύπρου  στους  Ασσυρίους.  Οι κυπριακές πόλεις-βασίλεια Σαλαμίνα, Κίτιον, Αμαθούντα, Κούριον, Ιδάλιον, Παλαίπαφος,  Μάριον,  Σόλοι,  και  Ταμασσός  παραμένουν  ανεξάρτητες όσο  είναι  σε  θέση  να  καταβάλλουν  το  φόρο  υποτέλειας  στον  Ασσύριο ηγεμόνα. Μετά την πτώση της Ασσυριακής ηγεμονίας,    ο Αιγύπτιος Φαραώ Άμασης, κατακτά την Κύπρο και δίνει ένα τέλος στην ‘ελαστική’ περίοδο της Ασσυριακής ηγεμονίας του νησιού. Χαρακτηριστικό της περιόδου αυτής είναι οι έντονες επιδράσεις, ελληνικές και ανατολικές, που διακρίνονται σε όλους τους τομείς της ζωής, αλλά περισσότερο στην τέχνη και τη θρησκεία.",
+        },
+        {
+          identifier: "classical",
+          text:
+            "During the Classical period (480-310 BC) Cyprus found itself in the middle of  the  Greco-Persian  Wars.The  Greek  strategy  was  to  drive  the  Persians  away from all Greek lands, including Cyprus, where they succeeded just for a short period, between 450 and 449 BC, when the Athenian fleet led by Kimon took over Marion, liberated Soloi and besieged Kition.Despite  this,  Cyprus  did  eventually  become  part  of  the  Persian  Empire,  though still maintaining its independence to a large degree. During the rule of  Evagoras  of  Salamis  (411-374  BC)  Cyprus  developed  into  one  of  the  most important political and cultural centres of the Hellenic world. Evagoras rebelled against the Persians, but after a lengthy war he was forced to sign a peace treaty with Persia. Throughout Persian rule, Greek influences on Cyprus were very strong. Deities of the Greek pantheon were introduced and Greek artists were assigned to create the seals of the coins to be minted for use by the Cypriot city-kingdoms.",
+          textGR: "Η Κλασική περίοδος (480 π.Χ. - 310 π.Χ.) βρίσκει την Κύπρο ανάμεσα στους ανταγωνισμούς των Ελλήνων και των Περσών. Οι Έλληνες προσπαθούν να εκδιώξουν τους Πέρσες από όλες τις ελληνικές περιοχές μεταξύ των οποίων και  η  Κύπρος.  Τούτο  επιτυγχάνεται  το  450-449  π.Χ.  για  μικρό  χρονικό διάστημα, όταν ο αθηναϊκός στόλος με αρχηγό τον Κίμωνα καταλαμβάνει το Μάριον, απελευθερώνει τους Σόλους και πολιορκεί το Κίτιο.Η  Κύπρος  γίνεται  τελικά  μέρος  της  Περσικής  Αυτοκρατορίας,  αλλά καταφέρνει και διατηρεί την ανεξαρτησία της σε μεγάλο βαθμό. Επί της εποχής του  βασιλιά  της  Σαλαμίνας  Ευαγόρα  (411-374  π.Χ.),  η  Κύπρος  γίνεται ένα  από  τα  σπουδαιότερα  πολιτικά  και  πολιτιστικά  κέντρα  του  Ελληνικού κόσμου. Ο Ευαγόρας επαναστατεί εναντίον των Περσών αλλά ύστερα από πολύχρονο πόλεμο αναγκάζεται να συνάψει ειρήνη με την Περσία. Κατά τη διάρκεια της περσικής κυριαρχίας οι ελληνικές επιδράσεις στην Κύπρο είναι πολύ  έντονες.  Ελληνικές  θεότητες  εισάγονται  στη  θρησκεία  και  Έλληνες καλλιτέχνες αναλαμβάνουν να ετοιμάσουν τις σφραγίδες των νομισμάτων που θα χρησιμοποιήσουν τα κυπριακά βασίλεια. ",
+        },
+        {
+          identifier: "hellenistic",
+          text:
+            "Persian  rule  came  to  an  end  during  the  Hellenistic  period  (310-30  BC)  during  Alexander  the  Great’s  campaign  to  the  East.  After  Alexander’s  death, Ptolemy, one of his successors, became ruler of the island.Strong influences of Alexandria, the capital of the new Ptolemaic kingdom of  Egypt,  are  evident  in  all  areas  of  art,  such  as  sculpture,  ceramics  and  statuette making.During  the  Ptolemaic  period  Cyprus  was  mainly  used  as  a  military  base.  The  Ptolemies  exploited  the  island’s  natural  resources,  such  as  copper,  timber for the construction of ships, olives and wheat.",
+          textGR: "Στην Ελληνιστική περίοδο (310-30 π.Χ.), η Περσική κυριαρχία τελειώνει με  την  εκστρατεία  του  Μεγάλου  Αλεξάνδρου  στην  Ανατολή.  Μετά  το θάνατο του Μεγάλου Αλεξάνδρου, ο Πτολεμαίος, ένας από τους βασικούς του  διάδοχους,  καταφέρνει  να  γίνει  κυρίαρχος  του  νησιού.  Σε  όλους τους  τομείς  της  τέχνης,  όπως  γλυπτική,  κεραμική  και  ειδωλοπλαστική, διακρίνονται  έντονες  επιδράσεις  από  την  Αλεξάνδρεια,  την  πρωτεύουσα του  νέου  Πτολεμαϊκού  βασιλείου  στην  Αίγυπτο.  Κατά  την  Πτολεμαϊκή περίοδο, η Κύπρος χρησιμοποιείται ως στρατιωτική βάση και οι Πτολεμαίοι εκμεταλλεύονται τους φυσικούς πόρους του νησιού, όπως χαλκό, ξυλεία για την κατασκευή πλοίων, ελιές και σιτηρά.",
+        },
+        {
+          identifier: "roman",
+          text:
+            "The  Romans,who  took  control  of  Cyprus  after  the  Ptolemies,  mainly  exploited  its  copper  mines.  Although  the  Roman  period  proper  is  said  to  have begun in 58 BC, Cyprus did not come under Roman rule until 30 BC. During  the  Roman  period  (30  BC-330  AD),  the  name  of  Cyprus  became  synonymous  with  the  Latin  equivalent  name  for  copper  (cuprum).  Under  Roman rule, as a result of trade, Cyprus enjoyed a three hundred year period of economic growth. One of the main exports at the time was decorative Cypriot pottery.Cypriot  jewellery  and  glassware  copied  the  decorative  styles  of  Roman  craft shops. At the start of the Roman period burial tombs were particularly rich, often containing exquisite golden jewellery and crafted glassware.A  landmark  in  the  history  of  Cyprus  during  the  Roman  period  was  the  conversion of the island to Christianity by the Apostles Paul and Barnabas, starting in 45 AD.",
+          textGR: "Οι  Ρωμαίοι,  που  κατακτούν  την  Κύπρο  μετά  τους  Πτολεμαίους, εκμεταλλεύονται  κυρίως  τα  μεταλλεία  του  χαλκού.  Αν  και  η  αρχή  της Ρωμαϊκής  εποχής  τοποθετείται  χρονολογικά  το  58  π.Χ.,  η  Κύπρος περιέρχεται οριστικά στη Ρώμη το 30 π.Χ. Την περίοδο αυτή (30 π.Χ.-330 μ.Χ.), το όνομα της Κύπρου ταυτίζεται με τη λατινική ονομασία του χαλκού (Cuprum). Κάτω από τη Ρωμαϊκή κυριαρχία, η Κύπρος γνωρίζει περισσότερο από  τρεις  αιώνες  οικονομικής  άνθησης,  που  βασίζεται  στο  εμπόριο.  Ένα από  τα  πιο  δημοφιλή  κυπριακά  προϊόντα  που  προορίζονται  για  εξαγωγή είναι  η  κυπριακή  ενσφράγιστη  κεραμική.  Τα  κυπριακά  κοσμήματα  και  τα γυάλινα αγγεία ακολουθούν τους διακοσμητικούς ρυθμούς των Ρωμαϊκών εργαστηρίων.  Στην  αρχή  της  Ρωμαϊκής  περιόδου  οι  τάφοι  είναι  ιδιαίτερα πλούσιοι σε κτερίσματα και συχνά περιέχουν περίτεχνα χρυσά κοσμήματα και πανέμορφα γυάλινα αγγεία.Σταθμός  στην  ιστορία  της  Κύπρου  κατά  τη  Ρωμαϊκή  περίοδο  αποτελεί  ο εκχριστιανισμός του νησιού από τους Αποστόλους Παύλο και Βαρνάβα, που άρχισε το 45 μ.Χ",
+        },
+        {
+          identifier: "byzantine",
+          text:
+            "n  330  AD  the  capital  of  the  Roman  Empire  was  moved  from  Rome  to  Constantinople.  Christianity  was  declared  the  official  religion  of  the  state.  In  395  AD  the  Roman  Empire  was  split  into  the  Western  Roman  Empire  and  the  Eastern  Roman  Empire.  The  Eastern  part,  also  known  as  the  Byzantine  Empire,  included  Cyprus,  from  the  4th  to  the  12th  centuries.  During  the  Early  Christian-Early  Byzantine  period,  between  the  4th  and  7th  centuries,  the  church  of  Cyprus  succeeded  with  great  effort  to  remain  autocephalous,  fully  independent  and  to  increase  its  influence considerably. In 488 AD Byzantine Emperor Zeno accorded the Archbishop of Cyprus and his successors the privileges of wearing a purple cloak  during  official  ceremonies,  holding  an  imperial  sceptre  and  signing  in red ink. Archbishop Anthemios, wishing to express his gratitude to the Emperor for ratifying that the Church of Cyprus would be autocephalous, presented  him  St.  Barnabas’  manuscript  of  St.  Mathew’s  Gospel,  which  Archbishop Anthemios had discovered in the Apostle’s tomb near Salamis. A monastery dedicated to St. Barnabas was erected on the spot where his tomb was discovered. St. Barnabas is considered to be the founder of the Church of Cyprus.Peace  prevailed  in  Cyprus  during  the  first  centuries  of  the  Byzantine  period.  New  cities  sprung  up,  while  others  were  abandoned  as  a  result  of  major  destructive  earthquakes.  The  capital  of  Cyprus  was  moved  from  Pafos  to  Salamis-Constantia,  near  which  the  town  of  Arsinoe-Ammochostos  (Famagusta)  developed  from  the  7th  century.  Amathous  remained  an  important  centre  since  Roman  times,  while  a  new  city  was  established  nearby,  Neapolis  or  Nemesos,  later  becoming  Lemesos,  in  the Frankish period. The old city of Ledra was replaced by Lefkosia, which eventually became the capital of Cyprus sometime between the 11th and 12th century.The  silk  industry,  which  the  Byzantines  introduced  clandestinely  from  China,  originally  developed  in  the  6th  century  and  grew  to  become  one  of  the  most  lucrative  handicrafts  on  the  island.  The  shipbuilding  yards  of  Cyprus  continued  to  produce  wooden  ships  on  a  large  scale,  while  an  aqueduct was built in Salamis, funded by the Byzantine Emperor Heraklios. The  silver  and  goldsmith  industries  flourished,  as  evidenced  by  precious  plates with depictions of the life of David, part of the discovered treasure of Lambousa (Lapithos). Some of the plates are now exhibited in the Cyprus Museum in Lefkosia, while other objects from the collection are housed in the British Museum and the Metropolitan Museum of Art, NewYork. Ecclesiastical art flourished in Cyprus, adopting elements from the Greco-Roman tradition, as well as eastern elements. The island’s first churches were built based on the Roman basilica model of an elongated oblong area, divided  by  a  row  of  columns  into  archways  and  aisles.  As  time  went  by  domes  and  arches  were  added  and  various  types  developed  around  the  shape  of  a  cross.  The  most  important  examples  of  architecture  during  this period are the early Christian wooden-roofed basilicas decorated with frescoes. The most important ones are those of Lambousa, Chrysopolitissa at  Kato  Pafos,  Kambanopetra  in  Constantia,  Agia  Triada  in  Gialousa,  Panagia Kanakaria in the Karpasia peninsula, Kourion and Agios Georgios in Pegeia.Three  rare  mosaics  that  still  survive  inside  the  apses  of  three  early  Christian  basilicas  depict  the  artistic  connection  between  Cyprus  and  Constantinople. The oldest of the three mosaics was the one in the apse of the now occupied church of Panagia Kanakaria in the Karpasia peninsula, the one in the best condition is found in the apse of the church of Panagia Angeloktisti at Kiti, while the third is in the church of Panagia Kyra, in the occupied village of Livadia, near Ammochostos.The basilicas were destroyed by the Arab raids that took place between the 7th and 10th centuries, but the mosaics were spared because they were incorporated into subsequent churches.Cyprus  acquired  particular  importance  to  Byzantium  and  to  Islam  in  the  7th century as a result of the conflict between the powers of the time. The Arab raids against Cyprus began in 648-649 AD and continued until 965 AD,when  Emperor  Nicephorus  II  Phocas  finally  defeated  them.  Up  until  the 12th century the Byzantines built castles and fortifications along the Pentadaktylos mountain range at St Hilarion, Voufavento and Kantara, as well as the monasteries at Kykkos, Machairas and Agios Neophytos.",
+          textGR: "To  330  μ.Χ.  η  πρωτεύουσα  του  Ρωμαϊκού  κράτους  μεταφέρεται  από τη  Ρώμη  στην  Κωνσταντινούπολη.  Επίσημη  θρησκεία  του  κράτους αναγνωρίζεται ο Χριστιανισμός, και το 395 μ.Χ. η Ρωμαϊκή Αυτοκρατορία μοιράζεται στα δύο: στη Δυτική Ρωμαϊκή Αυτοκρατορία και την Ανατολική Ρωμαϊκή Αυτοκρατορία. Το Ανατολικό τμήμα θα αποτελέσει τη Βυζαντινή Αυτοκρατορία  στην  οποία  ανήκε  η  Κύπρος  από  τον  4ο  μέχρι  τον  12ο αιώνα. Κατά την πρωτοχριστιανική-πρωτοβυζαντινή περίοδο, από τον 4ο-7ο αιώνα μ.Χ., η Εκκλησία της Κύπρου, μετά από αγώνες, κατορθώνει να διατηρήσει το αυτοκέφαλό της, την πλήρη αυτονομία της και να αναπτύξει σημαντική δράση. Το 488 μ.Χ. ο αυτοκράτορας Ζήνωνας παραχωρεί στον Αρχιεπίσκοπο  της  Κύπρου  και  τους  διαδόχους  του  τρία  αυτοκρατορικά προνόμια, να φέρει ερυθρό μανδύα κατά τις επίσημες τελετές, να κρατεί βασιλικό σκήπτρο και να υπογράφει με κόκκινο μελάνι. Ο Αρχιεπίσκοπος Ανθέμιος θέλοντας να δείξει την ευγνωμοσύνη του στον αυτοκράτορα για την επικύρωση του αυτοκέφαλου της Εκκλησίας της Κύπρου του χαρίζει το ιδιόχειρα γραμμένο από τον Απόστολο Βαρνάβα Ευαγγέλιο του Ματθαίου, που βρήκε ο Αρχιεπίσκοπος Ανθέμιος στον τάφο του Αποστόλου, κοντά στη Σαλαμίνα. Στο μέρος όπου βρέθηκε το λείψανο του Απ. Βαρνάβα, κτίστηκε μοναστήρι  αφιερωμένο  στον  Απόστολο  και  ιδρυτή  της  Εκκλησίας  της Κύπρου.Η Κύπρος έζησε ειρηνικά τους πρώτους αιώνες της Βυζαντινής περιόδου. Νέες πόλεις εμφανίζονται, ενώ άλλες εγκαταλείπονται εξαιτίας μεγάλων καταστροφικών σεισμών. Η πρωτεύουσα της Κύπρου μεταφέρεται από την Πάφο στη Σαλαμίνα-Κωνσταντία, κοντά στην οποία αναπτύσσεται από τον 7ο  αιώνα  η  Αρσινόη-Αμμόχωστος.  Σημαντικό  κέντρο  από  την  Ρωμαϊκή Εποχή εξακολουθεί να είναι η Αμαθούντα, κοντά στην οποία δημιουργείται μια νέα πόλη, η Νεάπολις ή Νεμεσός, η οποία θα ονομαστεί στην εποχή της Φραγκοκρατίας Λεμεσός. Την παλιά πόλη Λήδρα αντικαθιστά η Λευκωσία, η οποία και θα γίνει η πρωτεύουσα του νησιού, τον 11ο-12ο αιώνα μ.Χ. Τον 6ο αιώνα μ.Χ. γνώρισαν οι Κύπριοι τη μεταξουργία, που είχαν εισαγάγει λαθραία οι Βυζαντινοί από την Κίνα. Η μεταξουργία εξελίχθηκε σε μια από τις προσοδοφόρες βιοτεχνίες στο νησί. Τα ναυπηγεία της Κύπρου συνέχισαν την κατασκευή πλοίων σε μεγάλη κλίμακα, ενώ κατασκευάζεται υδραγωγείο στη Σαλαμίνα, με χρηματοδότηση του βυζαντινού αυτοκράτορα Ηράκλειου. Μεγάλη  υπήρξε  η  ανάπτυξη  της  αργυροχοΐας  και  της  χρυσοχοΐας,  όπως μαρτυρούν  πολύτιμοι  δίσκοι  με  παραστάσεις  της  ζωής  του  Δαυίδ,  του θησαυρού της Λάμπουσας (Λάπηθος). Μερικοί από τους δίσκους βρίσκονται στο Κυπριακό Μουσείο Λευκωσίας, ενώ άλλα αντικείμενα των θησαυρών βρίσκονται στο Βρετανικό Μουσείο και στο Μητροπολιτικό Μουσείο Νέας Υόρκης. Η  τέχνη  που  αναπτύσσεται  στην  Κύπρο  είναι  η  εκκλησιαστική,  η  οποία υιοθετεί στοιχεία της ελληνορωμαϊκής παράδοσης και ανατολικά στοιχεία. Οι  πρώτες  εκκλησίες  κτίστηκαν  με  πρότυπο  τη  ρωμαϊκή  βασιλική,  ένα επιμήκη  ορθογώνιο  χώρο,  χωρισμένο  με  σειρά  κιόνων  σε  στοές  και κλίτη. Με την πάροδο του χρόνου στη βασιλική προστέθηκαν τρούλοι και καμάρες  και  αναπτύχθηκαν  διάφοροι  τύποι  στο  σχήμα  του  σταυρού.  Τα σημαντικότερα  δείγματα  της  αρχιτεκτονικής  την  περίοδο  αυτή  είναι  οι παλαιοχριστιανικές  ξυλόστεγες  βασιλικές,  διακοσμημένες  με  ψηφιδωτά δάπεδα.  Οι  σπουδαιότερες  ανάμεσα  σε  άλλες  ήταν  της  Λάμπουσας,  της Χρυσοπολίτισσας στην Κάτω Πάφο, της Καμπανόπετρας στην Κωνσταντία, της Αγ. Τριάδας στη Γιαλούσα, της Παναγίας της Κανακαριάς στη Χερσόνησο της Καρπασίας, του Κουρίου και του Αγ. Γεωργίου στην Πέγεια. Τρία σπάνια μωσαϊκά  που  σώζονται  σε  αψίδες  τριών  πρωτοχριστιανικών  βασιλικών μαρτυρούν την τεχνοτροπική σχέση της Κύπρου με την Κωνσταντινούπολη.  Το αρχαιότερο από τα τρία ψηφιδωτά βρισκόταν στην αψίδα της εκκλησίας της  Παναγίας  της  Κανακαριάς  στη  Καρπασία,  το  πιο  καλά  διατηρημένο βρίσκεται στην αψίδα της εκκλησίας της Παναγίας της Αγγελόκτιστης στο Κίτι, ενώ το τρίτο βρίσκεται στην εκκλησία της Παναγίας της Κυράς στο χωριό  Λειβάδια,  κοντά  στην  Αμμόχωστο.  Οι  βασιλικές  καταστράφηκαν από  τις  αραβικές  επιδρομές  των  τριών  επόμενων  αιώνων  (7ος-10ος αιώνας  μ.Χ.),  αλλά  τα  ψηφιδωτά  διασώθηκαν  διότι  ενσωματώθηκαν  σε μεταγενέστερες εκκλησίες. Ιδιαίτερη σημασία για το Βυζάντιο και το Ισλάμ απέκτησε η Κύπρος, τον 7ο  αιώνα  μ.Χ.,  εξαιτίας  του  ανταγωνισμού  μεταξύ  των  υπερδυνάμεων της  εποχής.  Οι  αραβικές  επιδρομές  εναντίον  της  Κύπρου  άρχισαν  το 648-649 μ.Χ. και συνεχίστηκαν μέχρι το 965 μ.Χ., όταν ο αυτοκράτορας Νικηφόρος Φωκάς νίκησε του Άραβες ολοκληρωτικά. Μέχρι τον 12ο αιώνα μ.Χ., ιδρύονται από τους Βυζαντινούς τα κάστρα του Πενταδακτύλου Αγ. Ιλαρίωνας και Βουφαβέντο, το φρούριο της Καντάρας, καθώς επίσης και η μονή Κύκκου, η μονή Μαχαιρά και η μονή Αγίου Νεοφύτου.",
+          textGR: "To  330  μ.Χ.  η  πρωτεύουσα  του  Ρωμαϊκού  κράτους  μεταφέρεται  από τη  Ρώμη  στην  Κωνσταντινούπολη.  Επίσημη  θρησκεία  του  κράτους αναγνωρίζεται ο Χριστιανισμός, και το 395 μ.Χ. η Ρωμαϊκή Αυτοκρατορία μοιράζεται στα δύο: στη Δυτική Ρωμαϊκή Αυτοκρατορία και την Ανατολική Ρωμαϊκή Αυτοκρατορία. Το Ανατολικό τμήμα θα αποτελέσει τη Βυζαντινή Αυτοκρατορία  στην  οποία  ανήκε  η  Κύπρος  από  τον  4ο  μέχρι  τον  12ο αιώνα. Κατά την πρωτοχριστιανική-πρωτοβυζαντινή περίοδο, από τον 4ο-7ο αιώνα μ.Χ., η Εκκλησία της Κύπρου, μετά από αγώνες, κατορθώνει να διατηρήσει το αυτοκέφαλό της, την πλήρη αυτονομία της και να αναπτύξει σημαντική δράση. Το 488 μ.Χ. ο αυτοκράτορας Ζήνωνας παραχωρεί στον Αρχιεπίσκοπο  της  Κύπρου  και  τους  διαδόχους  του  τρία  αυτοκρατορικά προνόμια, να φέρει ερυθρό μανδύα κατά τις επίσημες τελετές, να κρατεί βασιλικό σκήπτρο και να υπογράφει με κόκκινο μελάνι. Ο Αρχιεπίσκοπος Ανθέμιος θέλοντας να δείξει την ευγνωμοσύνη του στον αυτοκράτορα για την επικύρωση του αυτοκέφαλου της Εκκλησίας της Κύπρου του χαρίζει το ιδιόχειρα γραμμένο από τον Απόστολο Βαρνάβα Ευαγγέλιο του Ματθαίου, που βρήκε ο Αρχιεπίσκοπος Ανθέμιος στον τάφο του Αποστόλου, κοντά στη Σαλαμίνα. Στο μέρος όπου βρέθηκε το λείψανο του Απ. Βαρνάβα, κτίστηκε μοναστήρι  αφιερωμένο  στον  Απόστολο  και  ιδρυτή  της  Εκκλησίας  της Κύπρου.Η Κύπρος έζησε ειρηνικά τους πρώτους αιώνες της Βυζαντινής περιόδου. Νέες πόλεις εμφανίζονται, ενώ άλλες εγκαταλείπονται εξαιτίας μεγάλων καταστροφικών σεισμών. Η πρωτεύουσα της Κύπρου μεταφέρεται από την Πάφο στη Σαλαμίνα-Κωνσταντία, κοντά στην οποία αναπτύσσεται από τον 7ο  αιώνα  η  Αρσινόη-Αμμόχωστος.  Σημαντικό  κέντρο  από  την  Ρωμαϊκή Εποχή εξακολουθεί να είναι η Αμαθούντα, κοντά στην οποία δημιουργείται μια νέα πόλη, η Νεάπολις ή Νεμεσός, η οποία θα ονομαστεί στην εποχή της Φραγκοκρατίας Λεμεσός. Την παλιά πόλη Λήδρα αντικαθιστά η Λευκωσία, η οποία και θα γίνει η πρωτεύουσα του νησιού, τον 11ο-12ο αιώνα μ.Χ. Τον 6ο αιώνα μ.Χ. γνώρισαν οι Κύπριοι τη μεταξουργία, που είχαν εισαγάγει λαθραία οι Βυζαντινοί από την Κίνα. Η μεταξουργία εξελίχθηκε σε μια από τις προσοδοφόρες βιοτεχνίες στο νησί. Τα ναυπηγεία της Κύπρου συνέχισαν την κατασκευή πλοίων σε μεγάλη κλίμακα, ενώ κατασκευάζεται υδραγωγείο στη Σαλαμίνα, με χρηματοδότηση του βυζαντινού αυτοκράτορα Ηράκλειου. Μεγάλη  υπήρξε  η  ανάπτυξη  της  αργυροχοΐας  και  της  χρυσοχοΐας,  όπως μαρτυρούν  πολύτιμοι  δίσκοι  με  παραστάσεις  της  ζωής  του  Δαυίδ,  του θησαυρού της Λάμπουσας (Λάπηθος). Μερικοί από τους δίσκους βρίσκονται ",
+        },
+        {
+          identifier: "frankish",
+          text:
+            "n 1191, the king of England, Richard the Lionheart, foresaw the strategic importance of Cyprus as a base for supplying the forces taking part in the Third  Crusade,  and  conquered  the  island.  In  Cyprus  Richard  married  his  fiancee Berengaria of Navarre, who was accompanying him, and crowned her  Queen  of  England.  Realising  how  difficult  it  would  be  to  maintain  control of the island, Richard sold it to the Knights Templars, who handed it back, following a local uprising on the island.Richard  finally  sold  Cyprus  to  the  former  king  of  the  Latin  state  of  Jerusalem,  French  nobleman  Guy  de  Lusignan,  founder  of  the  Lusignan  dynasty  of  kings  and  queens  in  Cyprus,  whose  family  originated  from  Poitier in France. Frankish rule of Cyprus, known as the Lusignan period, lasted  for  three  centuries  (1192  -  1489).  The  governing  regime  in  Cyprus became feudal and the Catholic Church was instated as the official institution  of  the  state.  In  1291,  after  the  fall  of  Acre  (Latin  kingdom  of  Jerusalem)  to  the  Mamelukes  of  Egypt,  Cyprus  remained  the  sole  bastion of Christianity in the East, as well as the most important trading post  in  the  Eastern  Mediterranean.  The  granting  by  the  Frankish  kings  of  commerce  privileges  to  powerful  trading  cities  of  the  West,  such  as  Venice  and  Genoa  gave  rise  to  conflict  between  the  Western  powers  as  to  who  would  prevail  over  Cyprus.  This  had  a  detrimental  political  and  economic effect on the island.The 14th century saw great commercial and economic activity in Cyprus. The  capital  of  the  island  Lefkosia  and  the  coastal  city  of  Ammochostos  (Famagusta)  grew  into  large  urban  centres  with  considerable  trading  activity.During  the  Middle  Ages,  Cyprus  produced  and  exported  high  quality  sugar,  excellent  wine  and  other  fine  agricultural  products.  At  the  same  time the weaving and lace industries flourished. Another growing industry was the production of glazed ceramic ware, both for local as well as for export needs.The  gothic  monuments  that  survive  from  the  Frankish  period  consist  mainly  of  places  of  worship  and  castles  that  combine  Byzantine  and  western  elements.  The  church  of  Agia  Sofia  in  Lefkosia,  St  Nicholas  Cathedral in Ammochostos and the Abbey of Belapais are just some of the better known structures.",
+          textGR: "Το 1191, κατά τη διάρκεια της Γ’ Σταυροφορίας, ο βασιλιάς της Αγγλίας Ριχάρδος ο Λεοντόκαρδος, εκτιμώντας τη στρατηγική σημασία της Κύπρου σε  θέματα  ανεφοδιασμού  για  τις  Σταυροφορίες,  κατακτά  το  νησί.  Στην Κύπρο  ο  Ριχάρδος  παντρεύεται    την  αρραβωνιαστικιά  του  Βερεγγάρια της Ναβάρρας που τον συνόδευε  και την στέφει βασίλισσα της Αγγλίας. Αντιλαμβανόμενος  όμως  πόσο  δύσκολο  θα  είναι  να  διατηρήσει  τον έλεγχο του νησιού, το πουλά στους Ναΐτες Ιππότες, οι οποίοι όμως λόγω εξεγέρσεων του κυπριακού λαού το επιστρέφουν πίσω στον Ριχάρδο. Ο τελευταίος, πουλά την Κύπρο τελικά στον πρώην βασιλιά του λατινικού κρατιδίου  της  Ιερουσαλήμ,  τον  Γάλλο  ευγενή  Γκύ  ντε  Λουζινιάν,  ιδρυτή της δυναστείας των Λουζινιανών βασιλιάδων της Κύπρου, του οποίου η οικογένεια καταγόταν από το Πουατιέ της Γαλλίας. Η Φραγκοκρατία στην Κύπρο, γνωστή ως περίοδος των Λουζινιάν, διατηρείται για τρεις αιώνες (1192-1489). Το πολίτευμα της Κύπρου μετατρέπεται σε φεουδαρχικό σύστημα και η Λατινική Εκκλησία εγκαθιδρύεται στην Κύπρο ως επίσημος θεσμός του κράτους. Tο 1291, μετά την κατάληψη της πόλης Άκρας του βασιλείου της Ιερουσαλήμ από τους Μαμελούκους της Αιγύπτου, η Κύπρος αποτελεί  το  μοναδικό  προπύργιο  του  Χριστιανισμού  στην  Ανατολή  και ταυτόχρονα το σημαντικότερο εμπορικό κέντρο της Ανατολικής Μεσογείου. Η παραχώρηση από τους Φράγκους βασιλιάδες εμπορικών προνομίων σε ισχυρές εμπορικές πόλεις της Δύσης, όπως τη Βενετία και τη Γένοβα, έχει ως αποτέλεσμα την πρόκληση διαμαχών μεταξύ των ισχυρών της Δύσης για επικράτησή τους στην Κύπρο και κατ’ επέκταση δυσμενείς πολιτικές και οικονομικές επιπτώσεις στη ζωή του νησιού. Τον  14ο  αιώνα  παρατηρείται  μεγάλη  εμπορική  ανάπτυξη  στην  Κύπρο. Η  πρωτεύουσα  του  νησιού  Λευκωσία,  και  η  παραθαλάσσια  πόλη  της Αμμοχώστου  εξελίσσονται  σε  μεγάλα  αστικά  και  εμπορικά  κέντρα,  με έντονη οικονομική δραστηριότητα. Κατά το Μεσαίωνα, η Κύπρος παράγει υψηλής ποιότητας ζάχαρη, εξαίρετο κρασί και άλλα αγροτικά προϊόντα. Την ίδια περίοδο αναπτύσσεται η βιοτεχνία υφαντών και κεντημάτων. Μια άλλη ανθούσα βιοτεχνία ήταν η παραγωγή εφυαλωμένων κεραμικών αγγείων που προορίζονται όχι μόνο για την κάλυψη τοπικών αναγκών, αλλά και για εξαγωγή.Τα γοτθικά μνημεία που διασώζονται από την περίοδο της Φραγκοκρατίας είναι  κυρίως  ναοί  και  κάστρα  που  συνδυάζουν  βυζαντινά  και  δυτικά στοιχεία. Η εκκλησία της Αγ. Σοφίας στη Λευκωσία, ο καθεδρικός ναός του Αγ. Νικολάου στην Αμμόχωστο και το Αββαείο του Μπέλαπαϊς είναι μερικά από τα πιο γνωστά οικοδομήματα.",
+        },
+        {
+          identifier: "venice",
+          text:
+            "The  last  queen  of  Cyprus,  Caterina  Cornaro,  wife  of  King  James  II  and  sister of Venetian nobleman Andreas Cornaro ceded the island to Venice in 1489, where upon Cyprus became part of “the Most Serene Republic” of Venice. This resulted in the definitive ousting of the Genoans from the island and the prevalence of Venetian rule. Venice’s main aim was to secure a firm hold of Cyprus that would allow the unimpeded movement and supply of Venetian ships in the Eastern Mediterranean.The main agricultural products that the island exported were wheat, barley,  sugar,  cotton,  wine  and  olive  oil.  The  main  cottage  industry  was textiles, while at the same time lace was beginning to be produced in  the  village  of  Lefkara.  Most  exports  were  shipped  out  of  the  port  of  Ammochostos.  Towards  the  end  of  Venetian  rule,  Larnaka  became  the  most  important  port  of  Cyprus,  from  where  salt  was  exported.  The  port  of Lemesos also started to develop at this time. When  the  Ottomans  conquered  the  island  of  Rhodes  in  1522,  the  Venetians were alerted to the danger of losing Cyprus. Hence they built fortifying  walls  around  Lefkosia  and  strengthened  the  existing  walls  of  Ammochostos,  on  whose  sea  side  stood  the  tower  of  Othello,  known    from the Shakespeare tragedy.",
+          textGR: "13ΙΣΤΟΡΙΑ ΤΗΣ ΚΥΠΡΟΥΟι Ενετοί στην ΚύπροΗ  τελευταία  βασίλισσα  της  Κύπρου,  Αικατερίνη  Κορνάρο,  σύζυγος  του βασιλιά  Ιάκωβου  Β’  και  αδελφή  του  ενετού  ευγενή  Ανδρέα  Κορνάρο, παραχωρεί το νησί στους Ενετούς το 1489 και η Κύπρος υπάγεται στη “Γαληνότατη  Δημοκρατία”  της  Βενετίας.  Αυτό  είχε  ως  αποτέλεσμα  τον οριστικό  εκτοπισμό  των  Γενουατών  από  το  νησί  και  την  κυριαρχία  των Ενετών. Βασική επιδίωξη της Βενετίας ήταν η διασφάλιση της σταθερής κατοχής  της  Κύπρου,  που  θα  επέτρεπε  την  απρόσκοπτη  διακίνηση  και ανεφοδιασμό των ενετικών πλοίων στην Ανατολική Μεσόγειο.Τα κυριότερα γεωργικά προϊόντα του νησιού που εξάγονταν στο εξωτερικό, ήταν το σιτάρι, το κριθάρι, η ζάχαρη, το βαμβάκι, το κρασί και το ελαιόλαδο. Η  κυριότερη  βιοτεχνία  ήταν  η  υφαντουργία,  ενώ  άρχισε  παράλληλα να  αναπτύσσεται  στην  περιοχή  του  χωριού  Λεύκαρα  η  βιοτεχνία  των λευκαρίτικων κεντημάτων. Το μεγαλύτερο μέρος του εξαγωγικού εμπορίου διεξαγόταν από το λιμάνι της Αμμοχώστου. Προς το τέλος της Ενετοκρατίας η Λάρνακα γίνεται το σημαντικότερο λιμάνι της Κύπρου. Από εκεί εξαγόταν το αλάτι. Την ίδια εποχή αναπτύσσεται και το λιμάνι της Λεμεσού.Με την κατάληψη του νησιού της Ρόδου από τους Οθωμανούς το 1522, και συνειδητοποιώντας τη σοβαρότητα του κινδύνου, έκτισαν τα νέα τείχη της  Λευκωσίας  και  ενίσχυσαν  τα  τείχη  της  Αμμοχώστου.  Στην  πλευρά του τείχους της Αμμοχώστου προς τη θάλασσα βρίσκεται ο πύργος του Οθέλλου, γνωστός από την ομώνυμη τραγωδία του Σαίξπηρ.",
+        },
+        {
+          identifier: "ottomans",
+          text:
+            "The period of Ottoman rule in Cyprus began with the fall of Ammochostos in 1571. The Latins were expelled from the island and a Moslem community was established in Cyprus for the first time. Privileges were given to the Orthodox Church of Cyprus from the beginning of Ottoman rule, giving it not just religious authority but also political authority.Cyprus went through hard times during Ottoman rule. The contribution of the Greek Cypriots to the Greek War of Independence in 1821 resulted in the  execution  of  Cyprus  Archbishop  Kyprianos,  three  of  his  bishops  and  about 470 clerics and laymen.Since  the  early  18th  century,  there  took  place  a  positive  social  and  economic resurgence in the lives of Greek Cypriots and Greeks, alongside the parallel decline of the Ottoman Empire.The  trading  activities  of  Europeans  in  the  coastal  towns  of  Cyprus  and  the establishment of foreign consular offices in Larnaka marked the start of a change in the social fabric of the island, from agricultural and semi-feudal  as  it  was  in  previous  periods,  to  semi-urban  in  the  coastal  towns.  This social change was strengthened by the close contacts of the Greeks of Cyprus with the newly independent Greek state that emerged after the Greek War of Independence. These first urbanised townsfolk began to express the first strong nationalist sentiments.",
+          textGR: "Με  την  άλωση  της  Αμμοχώστου  το  1571  αρχίζει  η  περίοδος  της Τουρκοκρατίας στη Κύπρο. Οι Λατίνοι εκδιώκονται από το νησί και για πρώτη φορά δημιουργείται μουσουλμανικός πυρήνας στην Κύπρο. Από την αρχή της Τουρκοκρατίας παραχωρούνται προνόμια στην ορθόδοξη Εκκλησία της Κύπρου, η οποία και απέκτησε το δικαίωμα να ασκεί όχι μόνο θρησκευτική, αλλά και πολιτική εξουσία. Οι Κύπριοι πέρασαν σκληρές δοκιμασίες στα χρόνια της Τουρκοκρατίας. Η συμβολή του κυπριακού ελληνισμού στην Ελληνική Επανάσταση το 1821 είχε  ως  αποτέλεσμα  την  εκτέλεση  του  Αρχιεπισκόπου  Κυπριανού,  των τριών επισκόπων και 470 περίπου κληρικών και λαϊκών.Από  τις  αρχές  του  18ου  αιώνα  αρχίζει  μια  πορεία  κοινωνικής  και οικονομικής ανάκαμψης του κυπριακού, όπως και του λοιπού ελληνισμού, η οποία βαδίζει παράλληλα με την παρακμή της Οθωμανικής Αυτοκρατορίας. Η εμπορική δραστηριότητα των Ευρωπαίων στις παράλιες πόλεις της Κύπρου και  η  εγκατάσταση  προξενείων  στη  Λάρνακα  σηματοδοτούν  την  απαρχή μιας διαφοροποίησης στην κοινωνική δομή του νησιού, που από αγροτική και  ημιφεουδαρχική  κατά  τη  διάρκεια  των  προηγούμενων  περιόδων,  θα μετατραπεί  αργότερα  σε  περιορισμένη  αστική  στις  παράλιες  πόλεις.  Την κοινωνική  διαφοροποίηση  ενίσχυσε  και  η  επικοινωνία  του  κυπριακού ελληνισμού  με  τον  ελληνισμό  του  ανεξάρτητου  ελληνικού  κράτους,  που προέκυψε μετά την ελληνική επανάσταση. Οι πρώτοι αστοί εκφράζουν και τα πρώτα εθνικά αιτήματα.",
+        },
+        {
+          identifier: "english",
+          text:
+            "In 1878, under a secret treaty established between Great Britain and the Ottomans, Cyprus was ceded to the former. Despite early expectations of Cypriots that there would be substantial changes in their political, economic and social lives and that their desire for union of Cyprus with Greece would be fulfilled, these did not materialise. Greek Cypriot disappointment with British colonial rule together with the prevailing economic recession, led to  the  uprising  events  of  October  1931.  These  events  resulted  in  even  harsher colonial measures being imposed by the British.The Greeks of Cyprus continued to press on with their demand for national restitution  and  union  with  Greece  but  the  British  government  continued  to  reject  it.  On  15  January  1950  a  referendum  on  union  “Enosis”  with  Greece was held, in which 95,7% of Greek Cypriots voted in favour. The referendum outcome had no effect on the British stance. On 20 October 1950  the  Bishop  of  Kition  Makarios  III  was  elected  as  Archbishop.  The  political deadlock the Greek Cypriots faced led to the waging of the national liberation anticolonial struggle of 1955-59, by the National Organisation of Cypriot Fighters (EOKA). The struggle resulted in the ending of British rule, but not to union with Greece. The Zurich-London Agreements led to the establishment of the independent Republic of Cyprus. On 13 December 1959 Archbishop Makarios III was elected first President of the Republic and Dr Fazil Kutchuk first Vice President.",
+          textGR: "Το 1878, με μυστική συμφωνία που έγινε μεταξύ της Μ. Βρετανίας και των  Οθωμανών,  η  Κύπρος  παραχωρείται  στη  Μ.  Βρετανία.  Παρά  τις προσδοκίες  των  Κυπρίων  για  ουσιαστικές  μεταβολές  στην  πολιτική, οικονομική και κοινωνική ζωή και στο αίτημά τους για Ένωση της Κύπρου με την Ελλάδα, οι προσδοκίες τους δεν εκπληρώθηκαν. Η απογοήτευση του ελληνισμού της Κύπρου από τη βρετανική στάση στο εθνικό ζήτημα και η οικονομική δυσπραγία οδήγησαν στο κίνημα του 1931 (τα Οκτωβριανά).  Το αποτέλεσμα της αντιαποικιακής εξέγερσης του 1931 ήταν   η εφαρμογή ακόμα πιο σκληρής αποικιακής πολιτικής από τους Άγγλους. Οι Έλληνες της Κύπρου συνέχισαν να προβάλλουν το αίτημα για εθνική αποκατάσταση και Ένωση με την Ελλάδα, αλλά η απόρριψη της Βρετανικής κυβέρνησης συνεχιζόταν. Στις 15 Ιανουαρίου 1950 διενεργείται το ενωτικό δημοψήφισμα και σ’ αυτό το 95,7% των Ελλήνων Κυπρίων ψηφίζουν υπέρ της  Ένωσης.  Ούτε  το  δημοψήφισμα  έφερε  ουσιαστικό  αποτέλεσμα.  Στις 20 Οκτωβρίου 1950 εκλέγεται Αρχιεπίσκοπος ο Μακάριος Γ’, μέχρι τότε Μητροπολίτης Κιτίου. Τα πολιτικά αδιέξοδα που αντιμετωπίζει ο κυπριακός λαός τον εξωθούν στην ανάληψη του ένοπλου απελευθερωτικού αγώνα του 1955-59, από την Εθνική Οργάνωση Κυπρίων Αγωνιστών (ΕΟΚΑ). Ο αγώνας είχε ως αποτέλεσμα την απελευθέρωση μεν της Κύπρου από την Αγγλία, όχι όμως την Ένωσή της με την Ελλάδα. Οι συμφωνίες Ζυρίχης-Λονδίνου  οδηγούν  στην  ίδρυση  ανεξάρτητου  Κυπριακού  κράτους.  Στις 13  Δεκεμβρίου  1959  ο  Αρχιεπίσκοπος  Μακάριος  Γ’  εκλέγεται  πρώτος Πρόεδρος της Κυπριακής Δημοκρατίας και ο Δρ Φαζίλ Κουτσιούκ πρώτος αντιπρόεδρος. ",
+        },
+        {
+          identifier: "independence",
+          text:
+            "The  Republic  of  Cyprus  was  proclaimed  on  16  August  1960.  The  island  became a member of the United Nations, the Commonwealth, the Council of  Europe  and  the  Non-Aligned  Movement.  On  the  basis  of  the  Zurich-London agreements Britain maintained two sovereign military bases on the island with a total combined area of 158,4 square kilometres, consisting of  Dhekelia  to  the  east  of  Larnaka  and  Akrotiri-Episkopi  near  Lemesos.  Two  treaties  were  signed  as  part  of  the  Zurich-London  agreements,  the  Treaty of Alliance and the Treaty of Guarantee. The latter gave the right to the three guarantor powers, Britain, Turkey and Greece, to take action in the event that the provisions of the Treaty were violated.Although   the   Cyprus   constitution   safeguarded   the   basic   rights   and   freedoms of all its citizens, it contained community provisions that made it  complex  and  non-workable.  In  1963  the  President  of  the  Republic  proposed  constitutional  amendments  which  both  the  Turkish  Cypriot  community leadership and Turkey rejected.The  Turkish  Cypriots  withdrew  from  the  government  and  proceeded  to  set up an illegal “Temporary Turkish Cypriot Adminstration”. As a result of  subsequent  inter-communal  conflict  that  ensued  at  the  beginning  of  1964,  a  United  Nations  Security  Council  resolution  established  a  U.N  Peace Keeping Force in Cyprus.In 1974 the military junta ruling Greece at the time staged a military coup in Cyprus aiming at the overthrow of elected President Makarios. Turkey used the coup as a pretext to invade militarily the island on 20 July 1974 and occupy 37% of the territory of the Republic of Cyprus, displacing about 200000  Greek  Cypriots  from  the  occupied  northern  part  of  the  island.  Despite  international  condemnation  of  Turkey  and  the  acknowledgement  of  the  rights  of  the  Cypriot  people  drafted  in  various  resolutions  issued  by the United Nations, the Security Council, the Commonwealth, the Non-Aligned  Movement  and  other  international  organisations,  Turkish  troops  still illegally occupy the northern part of Cyprus. On the1st of May 2004, with its northern part still under occupation, Cyprus became a full member of  the  European  Union.  The  accession  act  included  a  protocol  which  states that implementation of the acquis communautaire on the areas not controlled by the Cyprus government (as a result of the Turkish invasion) is  suspended.  This  suspension  will  be  removed  as  soon  as  the  Cyprus  problem  is  solved.  Efforts  and  negotiations  to  find  a  just  and  functional  solution to the Cyprus problem are continuing.",
+          textGR: "Στις  16  Αυγούστου  1960  ανακηρύσσεται  επίσημα  η  Κυπριακή Δημοκρατία.  Το  Κυπριακό  κράτος  γίνεται  μέλος  των  Ηνωμένων  Εθνών, της Κοινοπολιτείας, του Συμβουλίου της Ευρώπης και του Κινήματος των Αδεσμεύτων.  Με  βάση  τις  συνθήκες  Ζυρίχης-Λονδίνου,  η  Μ.  Βρετανία διατηρεί στην Κύπρο δύο κυρίαρχες στρατιωτικές βάσεις εκτάσεως 253,47 τετραγωνικών  χιλιομέτρων  στη  Δεκέλεια,  ανατολικά  της  Λάρνακας  και στην περιοχή Ακρωτηρίου-Επισκοπής, κοντά στη Λεμεσό. Δύο συνθήκες υπογράφτηκαν στα πλαίσια των συνθηκών Ζυρίχης-Λονδίνου, η Συνθήκη Συμμαχίας και η Συνθήκη Εγγυήσεως. Η τελευταία έδινε το δικαίωμα στις τρεις εγγυήτριες δυνάμεις, τη Μ. Βρετανία, την Τουρκία και την Ελλάδα να αναλάβουν δράση σε περίπτωση παραβίασης των διατάξεων της Συνθήκης.Παρόλο που το σύνταγμα της Κύπρου διασφάλιζε τις βασικές ελευθερίες και τα δικαιώματα των πολιτών, εμπεριείχε στοιχεία που το καθιστούσαν ανεφάρμοστο.  Το  1963  ο  Πρόεδρος  της  Δημοκρατίας  προτείνει τροποποιήσεις  τις  οποίες  απορρίπτει  η  Τουρκοκυπριακή  ηγεσία  και  η Τουρκία. Από το 1963 οι Τουρκοκύπριοι αποχωρούν από τη διακυβέρνηση της  Κυπριακής  Δημοκρατίας  και  προχωρούν  στη  σύσταση  παράνομης ‘Προσωρινής  Τουρκοκυπριακής  Διοίκησης’.  Από  τις  αρχές  του  1964, λόγω  των  διακοινοτικών  ταραχών  και  ύστερα  από  σχετική  απόφαση του  Συμβουλίου  Ασφαλείας,  στο  νησί  εδρεύει  Ειρηνευτική  Δύναμη  των Ηνωμένων Εθνών. Το  1974,  η  στρατιωτική  χούντα  στην  Ελλάδα  οργανώνει  στρατιωτικό πραξικόπημα στην Κύπρο, με σκοπό την ανατροπή του Προέδρου Μακαρίου. Με αφορμή το πραξικόπημα, στις 20 Ιουλίου 1974, η Τουρκία εισβάλλει στην  Κύπρο,  καταλαμβάνοντας  το  37%  του  εδάφους  της  Κυπριακής Δημοκρατίας  και  εκτοπίζει  περίπου  200.000  Ελληνοκύπριους  από  το βόρειο  τμήμα  της  Κύπρου.  Παρά  τη  διεθνή  καταδίκη  της  Τουρκίας  και την αναγνώριση των δίκαιων του κυπριακού λαού που περιλαμβάνονται σε  ψηφίσματα  των  Ηνωμένων  Εθνών,  του  Συμβουλίου  Ασφαλείας,  της Κοινοπολιτείας,  των  Αδεσμεύτων  και  άλλων  διεθνών  οργανισμών, τα  τουρκικά  στρατεύματα  κατέχουν  παράνομα  μέχρι  σήμερα  το  βόρειο τμήμα του νησιού. Η Κύπρος, με κατεχόμενο το βόρειο τμήμα του νησιού, γίνεται πλήρες μέλος της Ευρωπαϊκής Ένωσης, την 1η Μαΐου 2004. Στην πράξη  προσχώρησης  της  Κύπρου  στην  Ευρωπαϊκή  Ένωση  περιέχεται πρωτόκολλο,  στο  οποίο  αναφέρεται  ότι  αναστέλλεται  η  εφαρμογή  του κοινοτικού  κεκτημένου  στις  περιοχές  της  Κυπριακής  Δημοκρατίας  στις οποίες η Κυπριακή Κυβέρνηση δεν ασκεί αποτελεσματικό έλεγχο (ένεκα της τουρκικής κατοχής). Η αναστολή θα αρθεί, μόλις επιλυθεί το Κυπριακό. Οι προσπάθειες και οι διαπραγματεύσεις για μια δίκαιη και λειτουργική λύση του Κυπριακού προβλήματος συνεχίζονται.",
+        },
+      ];
+  
+      var quoteNum = Math.floor(Math.random() * 10);
+  
+      setEnglish = () => {
+        generalFeatures.map((obj) => {
+          document.querySelector(obj.selector).innerHTML = obj.text;
+        });
+        document.getElementById("fact").innerHTML = quotes[quoteNum].text;
+        document.getElementById("en").classList.add("selected-language");
+        document.getElementById("gr").classList.remove("selected-language");
+        lang = "en";
+      };
+  
+      setGreek = () => {
+        generalFeatures.map((obj) => {
+          document.querySelector(obj.selector).innerHTML = obj.textGR;
+        });
+        document.getElementById("fact").innerHTML = quotes[quoteNum].textGR;
+        document.getElementById("en").classList.remove("selected-language");
+        document.getElementById("gr").classList.add("selected-language");
+        lang = "gr";
+      };
+  
+      clickEra = (obj) => {
+        let id = obj.id;
+        let heading = document.querySelector("#" + id + " h3").innerHTML;
+        let descriptionObj = descriptions.filter((x) => x.identifier == id);
+  
+        document.querySelector("#details h2").innerHTML = heading;
+  
+        if (lang == "en") {
+          document.querySelector("#details p").innerHTML = descriptionObj[0].text;
+        } else {
+          document.querySelector("#details p").innerHTML =
+            descriptionObj[0].textGR;
+        }
+        document.getElementById("overlay").classList.add("visible");
+        document.querySelector(".mainContent").classList.add("no-overflow");
+        document.getElementById("details").classList.add("show");
+      };
+  
+      closeEra = () => {
+        document.getElementById("overlay").classList.remove("visible");
+        document.querySelector(".mainContent").classList.remove("no-overflow");
+        document.getElementById("details").classList.remove("show");
+      };
+  
+      setEnglish();
+    </script>
   </body>
-  <script>
-    let lang = "en";
-    const generalFeatures = [
-      {
-        selector: "#title",
-        text: "A Cyprus chronicle.",
-        textGR: "Χρονικό της Κύπρου.",
-      },
-      { selector: "#about-me", text: "About me", textGR: "Για εμένα" },
-      {
-        selector: ".mainContent h2",
-        text: "10000 years of history",
-        textGR: "10000 χρόνια ιστορίας",
-      },
-      {
-        selector: ".mainContent p",
-        text:
-          "Cyprus is the third largest island in the Mediterranean. It is situated at the crossroads of three continents – Europe, Asia and Africa. This geographic position has since antiquity played an important part in the island’s turbulent history. Its prehistoric age inhabitants were joined by the Mycenaean Greeks 3500 years ago, who introduced and established their civilisation, thus permanently instilling the island’s Greek roots.",
-        textGR:
-          "Η Κύπρος είναι το τρίτο σε μέγεθος νησί της Μεσογείου. Βρίσκεται στο σταυροδρόμι τριών ηπείρων - Ευρώπης, Ασίας και Αφρικής. Αυτή η γεωγραφική θέση έχει παίξει σημαντικό ρόλο στην πολυτάραχη ιστορία του νησιού. Οι προϊστορικοί του κάτοικοι αναμίχθηκαν με τους Μυκηναίους Έλληνες αποίκους 3500 χρόνια πρίν, οι οποίοι εισήγαγαν και καθιέρωσαν τον Ελληνικό πολιτισμό από τότε.",
-      },
-      {
-        selector: "#linkTitle",
-        text: "USEFUL LINKS",
-        textGR: "ΧΡΗΣΙΜΟΙ ΣΥΝΔΕΣΜΟΙ",
-      },
-      {
-        selector: "#linkA",
-        text: "Ministry of Tourism",
-        textGR: "Υπουργείο Τουρισμού",
-      },
-      {
-        selector: "#linkB",
-        text: "Department of antiquities",
-        textGR: "Τμήμα αρχαιοτήτων",
-      },
-      {
-        selector: "#linkC",
-        text: "Cyprus monuments",
-        textGR: "Μνημεία της Κύπρου",
-      },
-      {
-        selector: "#interestingTitle",
-        text: "DID YOU KNOW?",
-        textGR: "ΗΞΕΡΕΣ ΟΤΙ;",
-      },
-      {
-        selector: "#credits",
-        text: "Dimitrios Fkiaras - December 2020",
-        textGR: "Δημήτριος Φκιαράς - Δεκέμβριος 2020",
-      },
-
-      {
-        selector: "#prehistoric h3",
-        text: "Prehistoric era 8200 - 1050 B.C.",
-        textGR: "Προϊστορική εποχή 8200 - 1050 π.Χ.",
-      },
-      {
-        selector: "#geometric h3",
-        text: "Geometric era 1050 - 480 B.C.",
-        textGR: "Γεωμετρική εποχή 1050 - 480 π.Χ.",
-      },
-      {
-        selector: "#classical h3",
-        text: "Classical era 480-330 B.C.",
-        textGR: "Κλασσική εποχή 480 - 330 π.Χ.",
-      },
-      {
-        selector: "#hellenistic h3",
-        text: "Hellenistic era 330-30 B.C.",
-        textGR: "Ελληνιστική εποχή 330 - 30 π.Χ.",
-      },
-      {
-        selector: "#roman h3",
-        text: "Roman era 30 B.C. - 330 A.D.",
-        textGR: "Ρωμαϊκή εποχή 30 π.Χ - 330 μ.Χ.",
-      },
-      {
-        selector: "#byzantine h3",
-        text: "Byzantine era 330 - 1191 A.D.",
-        textGR: "Bυζαντινή εποχή 330 - 1191 μ.Χ.",
-      },
-      {
-        selector: "#frankish h3",
-        text: "Frankish rule 1191 - 1489 A.D.",
-        textGR: "Φραγκοκρατία 1191 - 1489 μ.Χ.",
-      },
-      {
-        selector: "#venice h3",
-        text: "Venice rule 1489 - 1571 A.D.",
-        textGR: "Βενετοκρατία 1489 - 1571 μ.Χ.",
-      },
-      {
-        selector: "#ottomans h3",
-        text: "Ottoman rule 1571 - 1878 A.D.",
-        textGR: "Τουρκοκρατία 1571 - 1878 μ.Χ.",
-      },
-      {
-        selector: "#english h3",
-        text: "English rule 1878 - 1960 A.D.",
-        textGR: "Αγγλοκρατία 1878 - 1960 μ.Χ.",
-      },
-      {
-        selector: "#independence h3",
-        text: "Independence 1960 - today",
-        textGR: "Ανεξαρτησία 1960 - σήμερα μ.Χ.",
-      },
-    ];
-
-    const quotes = [
-      {
-        id: 0,
-        text:
-          "Zenon Kiteus was a philosopher from Kition, near today's city of Larnaka who created the Stoic philosophy school in Athens",
-        textGR:
-          "O Ζήνων ο Κιτιεύς ήταν φιλόσοφος από το Κίτιον, κοντά στην σημερινή Λάρνακα, ο οποίος ίδρυσε την σχολή των Στωικών φιλοσόφων στην Αθήνα.",
-      },
-      { id: 1, text: "", textGR: "" },
-      { id: 2, text: "", textGR: "" },
-      { id: 3, text: "", textGR: "" },
-      { id: 4, text: "", textGR: "" },
-      { id: 5, text: "", textGR: "" },
-      { id: 6, text: "", textGR: "" },
-      { id: 7, text: "", textGR: "" },
-      { id: 8, text: "", textGR: "" },
-      { id: 9, text: "", textGR: "" },
-      { id: 10, text: "", textGR: "" },
-    ];
-
-    const descriptions = [
-      {
-        identifier: "prehistoric",
-        text:
-          "The  very  first  signs  of  permanent  settlement  in  Cyprus  date  from  the  Neolithic Age (8200-3800 BC). While copper is mined in small quantities during the next period, the Chalcolithic Age (3800-2400 BC), this brings about  only  minor  changes  in  the  way  of  life  of  the  people.  In  both  the  Neolithic  and  the  Chalcolithic  Ages  the  Cypriots  lived  in  single  room  dwellings,  used  stone  tools  and  vessels,  made  jewellery  out  of  picrolite,  ate fish, cereals, lamb and goat’s meat and buried their dead within their settlements. The earliest pottery found dates back to the 5th millennium BC.The  first  significant  cultural  changes  affecting  all  aspects  of  society  took  place around 2400-2200 BC,   towards the end of the Chalcolithic Age and at the beginning of the Early Bronze Age. Instead of building cylindrically-shaped dwellings, people began to construct multi-room oblong structures, started to process copper in jewellery, applied the plough for agriculture and began to bury their dead in organised cemeteries. Despite the fact that these developments contributed to the economic growth that occurred both during  the  Early  (2400-1900  BC)  and  Middle  (1900-1650  BC)  Bronze  Age periods, people still lived in small hinterland villages. Communication and trade with the surrounding Mediterranean lands was limited. The Late Bronze Age (1650-1050 BC) was the first period of prehistoric Cyprus  when  tangible  and  irrefutable  evidence  exists  that  a  number  of  significant  developments  occurred.  These  include  the  establishment  of  coastal towns, intensive mining of copper and other metals, development of a writing script, contact and trade with the neighbouring regions of Egypt, the Middle East, the Aegean and the wider Eastern Mediterranean area. From the latter part of the 13th century BC successive waves of mainland Greeks  begin  to  settle  in  Cyprus.  Hence,  Mycenaean  pottery  is  imported  in  great  quantities  from  the  Aegean  (Greece)  and  used  extensively,  both  in everyday life as well as for religious ceremonies. Later it is reproduced locally and incorporated in the island’s ceramic tradition.",
-        textGR:
-          "Tα  πρωιμότερα  στοιχεία  μιας  καθ’  ολοκληρίαν  μόνιμης  εγκατάστασης στην  Κύπρο  παρουσιάζονται  στη  Νεολιθική  περίοδο  (8200-3800  π.Χ.). Αν και ο χαλκός εμφανίζεται σε μικρές ποσότητες την επόμενη περίοδο, τη Χαλκολιθική (3800-2400 π.Χ.), το γεγονός αυτό σηματοδοτεί μικρές αλλαγές  στον  τρόπο  ζωής  των  ανθρώπων.  Οι  άνθρωποι  και  στις  δύο περιόδους, τη Νεολιθική και τη Χαλκολιθική, ζουν σε μονόχωρες κατοικίες, χρησιμοποιούν λίθινα εργαλεία και αγγεία, κατασκευάζουν τα κοσμήματά τους από πικρόλιθο, τρώνε ψάρια, δημητριακά, αρνίσιο και κατσικίσιο κρέας και θάβουν τις περισσότερες φορές τους νεκρούς μέσα στους οικισμούς. Τα πρώτα πήλινα σκεύη εμφανίζονται την 5η χιλιετία π.Χ.Η  πρώτη  σημαντική  πολιτισμική  αλλαγή  λαμβάνει  χώρα  στο  τέλος  της Χαλκολιθικής  περιόδου  και  τις  αρχές  της  Πρώιμης  Εποχής  του  Χαλκού (περίπου 2400-2200 π.Χ.) και σταδιακά επηρεάζει όλους τους τομείς της κοινωνίας. Τα σπίτια από κυκλικά μετατρέπονται σε ορθογώνια κτίσματα με πολλά δωμάτια, αρχίζει η κατεργασία χαλκού, ο οποίος χρησιμοποιείται για την κατασκευή κοσμημάτων, το άροτρο εισάγεται στην αγροτική καλλιέργεια και οι ταφές γίνονται σε νεκροταφεία. Παρά το γεγονός ότι οι εξελίξεις αυτές διευκολύνουν την οικονομική ανάπτυξη που παρατηρείται και στις επόμενες περιόδους  της  Πρώιμης  (2400-1900  π.Χ.)  και  της  Μέσης  Εποχής  του Χαλκού (1900-1650 π.Χ.), οι άνθρωποι ζουν ακόμα σε μικρά χωριά στην ενδοχώρα. Οι εμπορικές σχέσεις με τις γύρω περιοχές της Μεσογείου είναι περιορισμένες.Η  Ύστερη  Εποχή  του  Χαλκού  (1650-1050  π.Χ.)  είναι  η  πρώτη περίοδος  της  Κυπριακής  Προϊστορίας  κατά  την  οποία  επιβεβαιώνονται αδιαμφισβήτητα  τεκμήρια  για  έναν  αριθμό  σημαντικών  καινοτομιών.  Σ’ αυτές περιλαμβάνονται: η δημιουργία παράλιων αστικών κέντρων, όπως η Έγκωμη και το Κίτιο, με δημόσια και θρησκευτικά κτίρια, η εντατικοποίηση της παραγωγής των μετάλλων, η ανάπτυξη της γραφής και οι αναπτυγμένες σχέσεις  με  τις  γειτονικές  περιοχές.  Όλα  αυτά  συνδέονται  άμεσα  με  την επέκταση της παραγωγής του χαλκού και τη συμμετοχή της Κύπρου στο διεθνές  εμπόριο  με  την  Αίγυπτο,  την  Εγγύς  Ανατολή,  το  Αιγαίο  και  τη ευρύτερη Δυτική Μεσόγειο.Από το τέλος του 13ου αιώνα διαδοχικά κύματα Αχαιών Ελλήνων αρχίζουν να εγκαθίστανται στην Κύπρο. Η Μυκηναϊκή κεραμική αρχικά εισάγεται σε μεγάλες ποσότητες από το Αιγαίο (Ελλάδα) και χρησιμοποιείται τόσο στην καθημερινή  ζωή,  όσο  και  στη  θρησκεία.  Τελικά  αντιγράφεται  τοπικά  και ενσωματώνεται στην τοπική κεραμική παράδοση.",
-      },
-      {
-        identifier: "geometric",
-        text:
-          "Two major developments marked the transition from the Prehistoric Age to Historic periods – the first was political and the second technological.The first major development was the establishment of new city-kingdoms. Up until the 11th century BC, all the large cities of the Late Bronze age had  been  destroyed  by  natural  causes,  possibly  earthquakes.  Folk  tales  that  the  new  cities  were  created  by  heroes  of  the  Trojan  War  on  their  return from the conflict correlate to historical facts, namely the last wave of  Achaean  Greek  settlement,  which  led  to  the  eventual  hellenisation  of  Cyprus, with the adoption of Greek culture and language. From the 10th century BC onwards the ties between Cyprus and Greek islands such as Euboea and Crete became particularly close.The  second  major  development  was  the  use  of  iron  in  metallurgy,  which  marked the start of a new era, the Iron Age. At first iron was used only in jewellery,  but  it  gradually  replaced  copper  in  tool  making.  The  Iron  Age  includes the Geometric period (1050 - 750 BC), in view of the fact that geometrical motifs were mainly used in decorating pottery. This period coincided with the arrival of the Phoenicians in Cyprus and their colonisation of the large coastal Mycenaean city of Kition.Typical  Phoenician  black-on-red  colour  pottery  was  introduced  and  later  produced locally on the island. The beginning of the next period, the Archaic period (750-480 BC), was marked by the subjugation of Cyprus to the Assyrians. During this period, the Cypriot city-kingdoms of Salamis, Kition, Amathous, Kourion, Idalion, Palaipafos, Marion, Soloi and Tamassos remained independent for as long as they were in a position to pay a subjugation tax to the Assyrian ruler.After  the  rule  of  the  Assyrian  hegemony,  the  Egyptian  Pharaoh  Amasis  took over Cyprus. Typical of this period were the strong Greek and eastern influences evident in all aspects of life, more so in art and religion.",
-        textGR:
-          "Δύο  μεγάλες  αλλαγές,  η  πρώτη  πολιτική  και  η  δεύτερη  τεχνολογική, σηματοδοτούν τη μετάβαση από την Προϊστορική περίοδο στους Ιστορικούς χρόνους.Η πρώτη αλλαγή είναι η ίδρυση καινούριων πόλεων-βασιλείων στην Κύπρο. Μέχρι τον 11ο αιώνα π.Χ., όλες οι μεγάλες πόλεις της Ύστερης Εποχής του Χαλκού είχαν καταστραφεί από φυσικά αίτια, πιθανώς από σεισμό. Οι μύθοι ότι οι καινούργιες πόλεις ιδρύθηκαν από τους ήρωες του Τρωικού πολέμου κατά  την  επιστροφή  τους  από  τον  πόλεμο  αντανακλούν  ένα  ιστορικό γεγονός: το τελευταίο κύμα του Αχαϊκού αποικισμού, που οδήγησε τελικά στον εξελληνισμό της Κύπρου, με την υιοθέτηση του ελληνικού πολιτισμού και γλώσσας. Από τον 10ο αιώνα π.Χ. και μετά παρατηρούνται ιδιαίτερα στενές σχέσεις μεταξύ Κύπρου και Εύβοιας και μεταξύ Κύπρου και Κρήτης.  Η δεύτερη μεγάλη αλλαγή είναι η χρήση του σιδήρου στη μεταλλουργία, η οποία σηματοδοτεί ταυτόχρονα την αρχή μιας καινούριας εποχής, της Εποχής του Σιδήρου, που αρχίζει το 1050 π.Χ. Ο σίδηρος αρχικά χρησιμοποιείται μόνο για την κατασκευή κοσμημάτων, αλλά σταδιακά αντικαθιστά τον χαλκό και χρησιμοποιείται και για την κατασκευή χρηστικών αντικειμένων, όπως μαχαίρια.  Η  πρώτη  περίοδος  της  Εποχής  του  Σιδήρου  είναι  γνωστή  ως Γεωμετρική περίοδος, εξαιτίας της κυριαρχίας της γεωμετρικής διακόσμησης των κεραμικών αγγείων. Η περίοδος αυτή συμπίπτει χρονικά με την άφιξη των  Φοινίκων  στην  Κύπρο  και  του  αποικισμού  της  μεγάλης  παράλιας μυκηναϊκής πόλης του Κιτίου. Τυπική Φοινικική κεραμική, όπως η Μελανή επί Ερυθρού, εισάγεται αλλά και κατασκευάζεται στο νησί.Η  αρχή  της  επόμενης  περιόδου,  της  Αρχαϊκής  (750-480  π.Χ.), σηματοδοτείται  από  την  υποταγή  της  Κύπρου  στους  Ασσυρίους.  Οι κυπριακές πόλεις-βασίλεια Σαλαμίνα, Κίτιον, Αμαθούντα, Κούριον, Ιδάλιον, Παλαίπαφος,  Μάριον,  Σόλοι,  και  Ταμασσός  παραμένουν  ανεξάρτητες όσο  είναι  σε  θέση  να  καταβάλλουν  το  φόρο  υποτέλειας  στον  Ασσύριο ηγεμόνα. Μετά την πτώση της Ασσυριακής ηγεμονίας,    ο Αιγύπτιος Φαραώ Άμασης, κατακτά την Κύπρο και δίνει ένα τέλος στην ‘ελαστική’ περίοδο της Ασσυριακής ηγεμονίας του νησιού. Χαρακτηριστικό της περιόδου αυτής είναι οι έντονες επιδράσεις, ελληνικές και ανατολικές, που διακρίνονται σε όλους τους τομείς της ζωής, αλλά περισσότερο στην τέχνη και τη θρησκεία.",
-      },
-      {
-        identifier: "classical",
-        text:
-          "During the Classical period (480-310 BC) Cyprus found itself in the middle of  the  Greco-Persian  Wars.The  Greek  strategy  was  to  drive  the  Persians  away from all Greek lands, including Cyprus, where they succeeded just for a short period, between 450 and 449 BC, when the Athenian fleet led by Kimon took over Marion, liberated Soloi and besieged Kition.Despite  this,  Cyprus  did  eventually  become  part  of  the  Persian  Empire,  though still maintaining its independence to a large degree. During the rule of  Evagoras  of  Salamis  (411-374  BC)  Cyprus  developed  into  one  of  the  most important political and cultural centres of the Hellenic world. Evagoras rebelled against the Persians, but after a lengthy war he was forced to sign a peace treaty with Persia. Throughout Persian rule, Greek influences on Cyprus were very strong. Deities of the Greek pantheon were introduced and Greek artists were assigned to create the seals of the coins to be minted for use by the Cypriot city-kingdoms.",
-        textGR: "Η Κλασική περίοδος (480 π.Χ. - 310 π.Χ.) βρίσκει την Κύπρο ανάμεσα στους ανταγωνισμούς των Ελλήνων και των Περσών. Οι Έλληνες προσπαθούν να εκδιώξουν τους Πέρσες από όλες τις ελληνικές περιοχές μεταξύ των οποίων και  η  Κύπρος.  Τούτο  επιτυγχάνεται  το  450-449  π.Χ.  για  μικρό  χρονικό διάστημα, όταν ο αθηναϊκός στόλος με αρχηγό τον Κίμωνα καταλαμβάνει το Μάριον, απελευθερώνει τους Σόλους και πολιορκεί το Κίτιο.Η  Κύπρος  γίνεται  τελικά  μέρος  της  Περσικής  Αυτοκρατορίας,  αλλά καταφέρνει και διατηρεί την ανεξαρτησία της σε μεγάλο βαθμό. Επί της εποχής του  βασιλιά  της  Σαλαμίνας  Ευαγόρα  (411-374  π.Χ.),  η  Κύπρος  γίνεται ένα  από  τα  σπουδαιότερα  πολιτικά  και  πολιτιστικά  κέντρα  του  Ελληνικού κόσμου. Ο Ευαγόρας επαναστατεί εναντίον των Περσών αλλά ύστερα από πολύχρονο πόλεμο αναγκάζεται να συνάψει ειρήνη με την Περσία. Κατά τη διάρκεια της περσικής κυριαρχίας οι ελληνικές επιδράσεις στην Κύπρο είναι πολύ  έντονες.  Ελληνικές  θεότητες  εισάγονται  στη  θρησκεία  και  Έλληνες καλλιτέχνες αναλαμβάνουν να ετοιμάσουν τις σφραγίδες των νομισμάτων που θα χρησιμοποιήσουν τα κυπριακά βασίλεια. ",
-      },
-      {
-        identifier: "hellenistic",
-        text:
-          "Persian  rule  came  to  an  end  during  the  Hellenistic  period  (310-30  BC)  during  Alexander  the  Great’s  campaign  to  the  East.  After  Alexander’s  death, Ptolemy, one of his successors, became ruler of the island.Strong influences of Alexandria, the capital of the new Ptolemaic kingdom of  Egypt,  are  evident  in  all  areas  of  art,  such  as  sculpture,  ceramics  and  statuette making.During  the  Ptolemaic  period  Cyprus  was  mainly  used  as  a  military  base.  The  Ptolemies  exploited  the  island’s  natural  resources,  such  as  copper,  timber for the construction of ships, olives and wheat.",
-        textGR: "Στην Ελληνιστική περίοδο (310-30 π.Χ.), η Περσική κυριαρχία τελειώνει με  την  εκστρατεία  του  Μεγάλου  Αλεξάνδρου  στην  Ανατολή.  Μετά  το θάνατο του Μεγάλου Αλεξάνδρου, ο Πτολεμαίος, ένας από τους βασικούς του  διάδοχους,  καταφέρνει  να  γίνει  κυρίαρχος  του  νησιού.  Σε  όλους τους  τομείς  της  τέχνης,  όπως  γλυπτική,  κεραμική  και  ειδωλοπλαστική, διακρίνονται  έντονες  επιδράσεις  από  την  Αλεξάνδρεια,  την  πρωτεύουσα του  νέου  Πτολεμαϊκού  βασιλείου  στην  Αίγυπτο.  Κατά  την  Πτολεμαϊκή περίοδο, η Κύπρος χρησιμοποιείται ως στρατιωτική βάση και οι Πτολεμαίοι εκμεταλλεύονται τους φυσικούς πόρους του νησιού, όπως χαλκό, ξυλεία για την κατασκευή πλοίων, ελιές και σιτηρά.",
-      },
-      {
-        identifier: "roman",
-        text:
-          "The  Romans,who  took  control  of  Cyprus  after  the  Ptolemies,  mainly  exploited  its  copper  mines.  Although  the  Roman  period  proper  is  said  to  have begun in 58 BC, Cyprus did not come under Roman rule until 30 BC. During  the  Roman  period  (30  BC-330  AD),  the  name  of  Cyprus  became  synonymous  with  the  Latin  equivalent  name  for  copper  (cuprum).  Under  Roman rule, as a result of trade, Cyprus enjoyed a three hundred year period of economic growth. One of the main exports at the time was decorative Cypriot pottery.Cypriot  jewellery  and  glassware  copied  the  decorative  styles  of  Roman  craft shops. At the start of the Roman period burial tombs were particularly rich, often containing exquisite golden jewellery and crafted glassware.A  landmark  in  the  history  of  Cyprus  during  the  Roman  period  was  the  conversion of the island to Christianity by the Apostles Paul and Barnabas, starting in 45 AD.",
-        textGR: "Οι  Ρωμαίοι,  που  κατακτούν  την  Κύπρο  μετά  τους  Πτολεμαίους, εκμεταλλεύονται  κυρίως  τα  μεταλλεία  του  χαλκού.  Αν  και  η  αρχή  της Ρωμαϊκής  εποχής  τοποθετείται  χρονολογικά  το  58  π.Χ.,  η  Κύπρος περιέρχεται οριστικά στη Ρώμη το 30 π.Χ. Την περίοδο αυτή (30 π.Χ.-330 μ.Χ.), το όνομα της Κύπρου ταυτίζεται με τη λατινική ονομασία του χαλκού (Cuprum). Κάτω από τη Ρωμαϊκή κυριαρχία, η Κύπρος γνωρίζει περισσότερο από  τρεις  αιώνες  οικονομικής  άνθησης,  που  βασίζεται  στο  εμπόριο.  Ένα από  τα  πιο  δημοφιλή  κυπριακά  προϊόντα  που  προορίζονται  για  εξαγωγή είναι  η  κυπριακή  ενσφράγιστη  κεραμική.  Τα  κυπριακά  κοσμήματα  και  τα γυάλινα αγγεία ακολουθούν τους διακοσμητικούς ρυθμούς των Ρωμαϊκών εργαστηρίων.  Στην  αρχή  της  Ρωμαϊκής  περιόδου  οι  τάφοι  είναι  ιδιαίτερα πλούσιοι σε κτερίσματα και συχνά περιέχουν περίτεχνα χρυσά κοσμήματα και πανέμορφα γυάλινα αγγεία.Σταθμός  στην  ιστορία  της  Κύπρου  κατά  τη  Ρωμαϊκή  περίοδο  αποτελεί  ο εκχριστιανισμός του νησιού από τους Αποστόλους Παύλο και Βαρνάβα, που άρχισε το 45 μ.Χ",
-      },
-      {
-        identifier: "byzantine",
-        text:
-          "n  330  AD  the  capital  of  the  Roman  Empire  was  moved  from  Rome  to  Constantinople.  Christianity  was  declared  the  official  religion  of  the  state.  In  395  AD  the  Roman  Empire  was  split  into  the  Western  Roman  Empire  and  the  Eastern  Roman  Empire.  The  Eastern  part,  also  known  as  the  Byzantine  Empire,  included  Cyprus,  from  the  4th  to  the  12th  centuries.  During  the  Early  Christian-Early  Byzantine  period,  between  the  4th  and  7th  centuries,  the  church  of  Cyprus  succeeded  with  great  effort  to  remain  autocephalous,  fully  independent  and  to  increase  its  influence considerably. In 488 AD Byzantine Emperor Zeno accorded the Archbishop of Cyprus and his successors the privileges of wearing a purple cloak  during  official  ceremonies,  holding  an  imperial  sceptre  and  signing  in red ink. Archbishop Anthemios, wishing to express his gratitude to the Emperor for ratifying that the Church of Cyprus would be autocephalous, presented  him  St.  Barnabas’  manuscript  of  St.  Mathew’s  Gospel,  which  Archbishop Anthemios had discovered in the Apostle’s tomb near Salamis. A monastery dedicated to St. Barnabas was erected on the spot where his tomb was discovered. St. Barnabas is considered to be the founder of the Church of Cyprus.Peace  prevailed  in  Cyprus  during  the  first  centuries  of  the  Byzantine  period.  New  cities  sprung  up,  while  others  were  abandoned  as  a  result  of  major  destructive  earthquakes.  The  capital  of  Cyprus  was  moved  from  Pafos  to  Salamis-Constantia,  near  which  the  town  of  Arsinoe-Ammochostos  (Famagusta)  developed  from  the  7th  century.  Amathous  remained  an  important  centre  since  Roman  times,  while  a  new  city  was  established  nearby,  Neapolis  or  Nemesos,  later  becoming  Lemesos,  in  the Frankish period. The old city of Ledra was replaced by Lefkosia, which eventually became the capital of Cyprus sometime between the 11th and 12th century.The  silk  industry,  which  the  Byzantines  introduced  clandestinely  from  China,  originally  developed  in  the  6th  century  and  grew  to  become  one  of  the  most  lucrative  handicrafts  on  the  island.  The  shipbuilding  yards  of  Cyprus  continued  to  produce  wooden  ships  on  a  large  scale,  while  an  aqueduct was built in Salamis, funded by the Byzantine Emperor Heraklios. The  silver  and  goldsmith  industries  flourished,  as  evidenced  by  precious  plates with depictions of the life of David, part of the discovered treasure of Lambousa (Lapithos). Some of the plates are now exhibited in the Cyprus Museum in Lefkosia, while other objects from the collection are housed in the British Museum and the Metropolitan Museum of Art, NewYork. Ecclesiastical art flourished in Cyprus, adopting elements from the Greco-Roman tradition, as well as eastern elements. The island’s first churches were built based on the Roman basilica model of an elongated oblong area, divided  by  a  row  of  columns  into  archways  and  aisles.  As  time  went  by  domes  and  arches  were  added  and  various  types  developed  around  the  shape  of  a  cross.  The  most  important  examples  of  architecture  during  this period are the early Christian wooden-roofed basilicas decorated with frescoes. The most important ones are those of Lambousa, Chrysopolitissa at  Kato  Pafos,  Kambanopetra  in  Constantia,  Agia  Triada  in  Gialousa,  Panagia Kanakaria in the Karpasia peninsula, Kourion and Agios Georgios in Pegeia.Three  rare  mosaics  that  still  survive  inside  the  apses  of  three  early  Christian  basilicas  depict  the  artistic  connection  between  Cyprus  and  Constantinople. The oldest of the three mosaics was the one in the apse of the now occupied church of Panagia Kanakaria in the Karpasia peninsula, the one in the best condition is found in the apse of the church of Panagia Angeloktisti at Kiti, while the third is in the church of Panagia Kyra, in the occupied village of Livadia, near Ammochostos.The basilicas were destroyed by the Arab raids that took place between the 7th and 10th centuries, but the mosaics were spared because they were incorporated into subsequent churches.Cyprus  acquired  particular  importance  to  Byzantium  and  to  Islam  in  the  7th century as a result of the conflict between the powers of the time. The Arab raids against Cyprus began in 648-649 AD and continued until 965 AD,when  Emperor  Nicephorus  II  Phocas  finally  defeated  them.  Up  until  the 12th century the Byzantines built castles and fortifications along the Pentadaktylos mountain range at St Hilarion, Voufavento and Kantara, as well as the monasteries at Kykkos, Machairas and Agios Neophytos.",
-        textGR: "To  330  μ.Χ.  η  πρωτεύουσα  του  Ρωμαϊκού  κράτους  μεταφέρεται  από τη  Ρώμη  στην  Κωνσταντινούπολη.  Επίσημη  θρησκεία  του  κράτους αναγνωρίζεται ο Χριστιανισμός, και το 395 μ.Χ. η Ρωμαϊκή Αυτοκρατορία μοιράζεται στα δύο: στη Δυτική Ρωμαϊκή Αυτοκρατορία και την Ανατολική Ρωμαϊκή Αυτοκρατορία. Το Ανατολικό τμήμα θα αποτελέσει τη Βυζαντινή Αυτοκρατορία  στην  οποία  ανήκε  η  Κύπρος  από  τον  4ο  μέχρι  τον  12ο αιώνα. Κατά την πρωτοχριστιανική-πρωτοβυζαντινή περίοδο, από τον 4ο-7ο αιώνα μ.Χ., η Εκκλησία της Κύπρου, μετά από αγώνες, κατορθώνει να διατηρήσει το αυτοκέφαλό της, την πλήρη αυτονομία της και να αναπτύξει σημαντική δράση. Το 488 μ.Χ. ο αυτοκράτορας Ζήνωνας παραχωρεί στον Αρχιεπίσκοπο  της  Κύπρου  και  τους  διαδόχους  του  τρία  αυτοκρατορικά προνόμια, να φέρει ερυθρό μανδύα κατά τις επίσημες τελετές, να κρατεί βασιλικό σκήπτρο και να υπογράφει με κόκκινο μελάνι. Ο Αρχιεπίσκοπος Ανθέμιος θέλοντας να δείξει την ευγνωμοσύνη του στον αυτοκράτορα για την επικύρωση του αυτοκέφαλου της Εκκλησίας της Κύπρου του χαρίζει το ιδιόχειρα γραμμένο από τον Απόστολο Βαρνάβα Ευαγγέλιο του Ματθαίου, που βρήκε ο Αρχιεπίσκοπος Ανθέμιος στον τάφο του Αποστόλου, κοντά στη Σαλαμίνα. Στο μέρος όπου βρέθηκε το λείψανο του Απ. Βαρνάβα, κτίστηκε μοναστήρι  αφιερωμένο  στον  Απόστολο  και  ιδρυτή  της  Εκκλησίας  της Κύπρου.Η Κύπρος έζησε ειρηνικά τους πρώτους αιώνες της Βυζαντινής περιόδου. Νέες πόλεις εμφανίζονται, ενώ άλλες εγκαταλείπονται εξαιτίας μεγάλων καταστροφικών σεισμών. Η πρωτεύουσα της Κύπρου μεταφέρεται από την Πάφο στη Σαλαμίνα-Κωνσταντία, κοντά στην οποία αναπτύσσεται από τον 7ο  αιώνα  η  Αρσινόη-Αμμόχωστος.  Σημαντικό  κέντρο  από  την  Ρωμαϊκή Εποχή εξακολουθεί να είναι η Αμαθούντα, κοντά στην οποία δημιουργείται μια νέα πόλη, η Νεάπολις ή Νεμεσός, η οποία θα ονομαστεί στην εποχή της Φραγκοκρατίας Λεμεσός. Την παλιά πόλη Λήδρα αντικαθιστά η Λευκωσία, η οποία και θα γίνει η πρωτεύουσα του νησιού, τον 11ο-12ο αιώνα μ.Χ. Τον 6ο αιώνα μ.Χ. γνώρισαν οι Κύπριοι τη μεταξουργία, που είχαν εισαγάγει λαθραία οι Βυζαντινοί από την Κίνα. Η μεταξουργία εξελίχθηκε σε μια από τις προσοδοφόρες βιοτεχνίες στο νησί. Τα ναυπηγεία της Κύπρου συνέχισαν την κατασκευή πλοίων σε μεγάλη κλίμακα, ενώ κατασκευάζεται υδραγωγείο στη Σαλαμίνα, με χρηματοδότηση του βυζαντινού αυτοκράτορα Ηράκλειου. Μεγάλη  υπήρξε  η  ανάπτυξη  της  αργυροχοΐας  και  της  χρυσοχοΐας,  όπως μαρτυρούν  πολύτιμοι  δίσκοι  με  παραστάσεις  της  ζωής  του  Δαυίδ,  του θησαυρού της Λάμπουσας (Λάπηθος). Μερικοί από τους δίσκους βρίσκονται στο Κυπριακό Μουσείο Λευκωσίας, ενώ άλλα αντικείμενα των θησαυρών βρίσκονται στο Βρετανικό Μουσείο και στο Μητροπολιτικό Μουσείο Νέας Υόρκης. Η  τέχνη  που  αναπτύσσεται  στην  Κύπρο  είναι  η  εκκλησιαστική,  η  οποία υιοθετεί στοιχεία της ελληνορωμαϊκής παράδοσης και ανατολικά στοιχεία. Οι  πρώτες  εκκλησίες  κτίστηκαν  με  πρότυπο  τη  ρωμαϊκή  βασιλική,  ένα επιμήκη  ορθογώνιο  χώρο,  χωρισμένο  με  σειρά  κιόνων  σε  στοές  και κλίτη. Με την πάροδο του χρόνου στη βασιλική προστέθηκαν τρούλοι και καμάρες  και  αναπτύχθηκαν  διάφοροι  τύποι  στο  σχήμα  του  σταυρού.  Τα σημαντικότερα  δείγματα  της  αρχιτεκτονικής  την  περίοδο  αυτή  είναι  οι παλαιοχριστιανικές  ξυλόστεγες  βασιλικές,  διακοσμημένες  με  ψηφιδωτά δάπεδα.  Οι  σπουδαιότερες  ανάμεσα  σε  άλλες  ήταν  της  Λάμπουσας,  της Χρυσοπολίτισσας στην Κάτω Πάφο, της Καμπανόπετρας στην Κωνσταντία, της Αγ. Τριάδας στη Γιαλούσα, της Παναγίας της Κανακαριάς στη Χερσόνησο της Καρπασίας, του Κουρίου και του Αγ. Γεωργίου στην Πέγεια. Τρία σπάνια μωσαϊκά  που  σώζονται  σε  αψίδες  τριών  πρωτοχριστιανικών  βασιλικών μαρτυρούν την τεχνοτροπική σχέση της Κύπρου με την Κωνσταντινούπολη.  Το αρχαιότερο από τα τρία ψηφιδωτά βρισκόταν στην αψίδα της εκκλησίας της  Παναγίας  της  Κανακαριάς  στη  Καρπασία,  το  πιο  καλά  διατηρημένο βρίσκεται στην αψίδα της εκκλησίας της Παναγίας της Αγγελόκτιστης στο Κίτι, ενώ το τρίτο βρίσκεται στην εκκλησία της Παναγίας της Κυράς στο χωριό  Λειβάδια,  κοντά  στην  Αμμόχωστο.  Οι  βασιλικές  καταστράφηκαν από  τις  αραβικές  επιδρομές  των  τριών  επόμενων  αιώνων  (7ος-10ος αιώνας  μ.Χ.),  αλλά  τα  ψηφιδωτά  διασώθηκαν  διότι  ενσωματώθηκαν  σε μεταγενέστερες εκκλησίες. Ιδιαίτερη σημασία για το Βυζάντιο και το Ισλάμ απέκτησε η Κύπρος, τον 7ο  αιώνα  μ.Χ.,  εξαιτίας  του  ανταγωνισμού  μεταξύ  των  υπερδυνάμεων της  εποχής.  Οι  αραβικές  επιδρομές  εναντίον  της  Κύπρου  άρχισαν  το 648-649 μ.Χ. και συνεχίστηκαν μέχρι το 965 μ.Χ., όταν ο αυτοκράτορας Νικηφόρος Φωκάς νίκησε του Άραβες ολοκληρωτικά. Μέχρι τον 12ο αιώνα μ.Χ., ιδρύονται από τους Βυζαντινούς τα κάστρα του Πενταδακτύλου Αγ. Ιλαρίωνας και Βουφαβέντο, το φρούριο της Καντάρας, καθώς επίσης και η μονή Κύκκου, η μονή Μαχαιρά και η μονή Αγίου Νεοφύτου.",
-        textGR: "To  330  μ.Χ.  η  πρωτεύουσα  του  Ρωμαϊκού  κράτους  μεταφέρεται  από τη  Ρώμη  στην  Κωνσταντινούπολη.  Επίσημη  θρησκεία  του  κράτους αναγνωρίζεται ο Χριστιανισμός, και το 395 μ.Χ. η Ρωμαϊκή Αυτοκρατορία μοιράζεται στα δύο: στη Δυτική Ρωμαϊκή Αυτοκρατορία και την Ανατολική Ρωμαϊκή Αυτοκρατορία. Το Ανατολικό τμήμα θα αποτελέσει τη Βυζαντινή Αυτοκρατορία  στην  οποία  ανήκε  η  Κύπρος  από  τον  4ο  μέχρι  τον  12ο αιώνα. Κατά την πρωτοχριστιανική-πρωτοβυζαντινή περίοδο, από τον 4ο-7ο αιώνα μ.Χ., η Εκκλησία της Κύπρου, μετά από αγώνες, κατορθώνει να διατηρήσει το αυτοκέφαλό της, την πλήρη αυτονομία της και να αναπτύξει σημαντική δράση. Το 488 μ.Χ. ο αυτοκράτορας Ζήνωνας παραχωρεί στον Αρχιεπίσκοπο  της  Κύπρου  και  τους  διαδόχους  του  τρία  αυτοκρατορικά προνόμια, να φέρει ερυθρό μανδύα κατά τις επίσημες τελετές, να κρατεί βασιλικό σκήπτρο και να υπογράφει με κόκκινο μελάνι. Ο Αρχιεπίσκοπος Ανθέμιος θέλοντας να δείξει την ευγνωμοσύνη του στον αυτοκράτορα για την επικύρωση του αυτοκέφαλου της Εκκλησίας της Κύπρου του χαρίζει το ιδιόχειρα γραμμένο από τον Απόστολο Βαρνάβα Ευαγγέλιο του Ματθαίου, που βρήκε ο Αρχιεπίσκοπος Ανθέμιος στον τάφο του Αποστόλου, κοντά στη Σαλαμίνα. Στο μέρος όπου βρέθηκε το λείψανο του Απ. Βαρνάβα, κτίστηκε μοναστήρι  αφιερωμένο  στον  Απόστολο  και  ιδρυτή  της  Εκκλησίας  της Κύπρου.Η Κύπρος έζησε ειρηνικά τους πρώτους αιώνες της Βυζαντινής περιόδου. Νέες πόλεις εμφανίζονται, ενώ άλλες εγκαταλείπονται εξαιτίας μεγάλων καταστροφικών σεισμών. Η πρωτεύουσα της Κύπρου μεταφέρεται από την Πάφο στη Σαλαμίνα-Κωνσταντία, κοντά στην οποία αναπτύσσεται από τον 7ο  αιώνα  η  Αρσινόη-Αμμόχωστος.  Σημαντικό  κέντρο  από  την  Ρωμαϊκή Εποχή εξακολουθεί να είναι η Αμαθούντα, κοντά στην οποία δημιουργείται μια νέα πόλη, η Νεάπολις ή Νεμεσός, η οποία θα ονομαστεί στην εποχή της Φραγκοκρατίας Λεμεσός. Την παλιά πόλη Λήδρα αντικαθιστά η Λευκωσία, η οποία και θα γίνει η πρωτεύουσα του νησιού, τον 11ο-12ο αιώνα μ.Χ. Τον 6ο αιώνα μ.Χ. γνώρισαν οι Κύπριοι τη μεταξουργία, που είχαν εισαγάγει λαθραία οι Βυζαντινοί από την Κίνα. Η μεταξουργία εξελίχθηκε σε μια από τις προσοδοφόρες βιοτεχνίες στο νησί. Τα ναυπηγεία της Κύπρου συνέχισαν την κατασκευή πλοίων σε μεγάλη κλίμακα, ενώ κατασκευάζεται υδραγωγείο στη Σαλαμίνα, με χρηματοδότηση του βυζαντινού αυτοκράτορα Ηράκλειου. Μεγάλη  υπήρξε  η  ανάπτυξη  της  αργυροχοΐας  και  της  χρυσοχοΐας,  όπως μαρτυρούν  πολύτιμοι  δίσκοι  με  παραστάσεις  της  ζωής  του  Δαυίδ,  του θησαυρού της Λάμπουσας (Λάπηθος). Μερικοί από τους δίσκους βρίσκονται ",
-      },
-      {
-        identifier: "frankish",
-        text:
-          "n 1191, the king of England, Richard the Lionheart, foresaw the strategic importance of Cyprus as a base for supplying the forces taking part in the Third  Crusade,  and  conquered  the  island.  In  Cyprus  Richard  married  his  fiancee Berengaria of Navarre, who was accompanying him, and crowned her  Queen  of  England.  Realising  how  difficult  it  would  be  to  maintain  control of the island, Richard sold it to the Knights Templars, who handed it back, following a local uprising on the island.Richard  finally  sold  Cyprus  to  the  former  king  of  the  Latin  state  of  Jerusalem,  French  nobleman  Guy  de  Lusignan,  founder  of  the  Lusignan  dynasty  of  kings  and  queens  in  Cyprus,  whose  family  originated  from  Poitier in France. Frankish rule of Cyprus, known as the Lusignan period, lasted  for  three  centuries  (1192  -  1489).  The  governing  regime  in  Cyprus became feudal and the Catholic Church was instated as the official institution  of  the  state.  In  1291,  after  the  fall  of  Acre  (Latin  kingdom  of  Jerusalem)  to  the  Mamelukes  of  Egypt,  Cyprus  remained  the  sole  bastion of Christianity in the East, as well as the most important trading post  in  the  Eastern  Mediterranean.  The  granting  by  the  Frankish  kings  of  commerce  privileges  to  powerful  trading  cities  of  the  West,  such  as  Venice  and  Genoa  gave  rise  to  conflict  between  the  Western  powers  as  to  who  would  prevail  over  Cyprus.  This  had  a  detrimental  political  and  economic effect on the island.The 14th century saw great commercial and economic activity in Cyprus. The  capital  of  the  island  Lefkosia  and  the  coastal  city  of  Ammochostos  (Famagusta)  grew  into  large  urban  centres  with  considerable  trading  activity.During  the  Middle  Ages,  Cyprus  produced  and  exported  high  quality  sugar,  excellent  wine  and  other  fine  agricultural  products.  At  the  same  time the weaving and lace industries flourished. Another growing industry was the production of glazed ceramic ware, both for local as well as for export needs.The  gothic  monuments  that  survive  from  the  Frankish  period  consist  mainly  of  places  of  worship  and  castles  that  combine  Byzantine  and  western  elements.  The  church  of  Agia  Sofia  in  Lefkosia,  St  Nicholas  Cathedral in Ammochostos and the Abbey of Belapais are just some of the better known structures.",
-        textGR: "Το 1191, κατά τη διάρκεια της Γ’ Σταυροφορίας, ο βασιλιάς της Αγγλίας Ριχάρδος ο Λεοντόκαρδος, εκτιμώντας τη στρατηγική σημασία της Κύπρου σε  θέματα  ανεφοδιασμού  για  τις  Σταυροφορίες,  κατακτά  το  νησί.  Στην Κύπρο  ο  Ριχάρδος  παντρεύεται    την  αρραβωνιαστικιά  του  Βερεγγάρια της Ναβάρρας που τον συνόδευε  και την στέφει βασίλισσα της Αγγλίας. Αντιλαμβανόμενος  όμως  πόσο  δύσκολο  θα  είναι  να  διατηρήσει  τον έλεγχο του νησιού, το πουλά στους Ναΐτες Ιππότες, οι οποίοι όμως λόγω εξεγέρσεων του κυπριακού λαού το επιστρέφουν πίσω στον Ριχάρδο. Ο τελευταίος, πουλά την Κύπρο τελικά στον πρώην βασιλιά του λατινικού κρατιδίου  της  Ιερουσαλήμ,  τον  Γάλλο  ευγενή  Γκύ  ντε  Λουζινιάν,  ιδρυτή της δυναστείας των Λουζινιανών βασιλιάδων της Κύπρου, του οποίου η οικογένεια καταγόταν από το Πουατιέ της Γαλλίας. Η Φραγκοκρατία στην Κύπρο, γνωστή ως περίοδος των Λουζινιάν, διατηρείται για τρεις αιώνες (1192-1489). Το πολίτευμα της Κύπρου μετατρέπεται σε φεουδαρχικό σύστημα και η Λατινική Εκκλησία εγκαθιδρύεται στην Κύπρο ως επίσημος θεσμός του κράτους. Tο 1291, μετά την κατάληψη της πόλης Άκρας του βασιλείου της Ιερουσαλήμ από τους Μαμελούκους της Αιγύπτου, η Κύπρος αποτελεί  το  μοναδικό  προπύργιο  του  Χριστιανισμού  στην  Ανατολή  και ταυτόχρονα το σημαντικότερο εμπορικό κέντρο της Ανατολικής Μεσογείου. Η παραχώρηση από τους Φράγκους βασιλιάδες εμπορικών προνομίων σε ισχυρές εμπορικές πόλεις της Δύσης, όπως τη Βενετία και τη Γένοβα, έχει ως αποτέλεσμα την πρόκληση διαμαχών μεταξύ των ισχυρών της Δύσης για επικράτησή τους στην Κύπρο και κατ’ επέκταση δυσμενείς πολιτικές και οικονομικές επιπτώσεις στη ζωή του νησιού. Τον  14ο  αιώνα  παρατηρείται  μεγάλη  εμπορική  ανάπτυξη  στην  Κύπρο. Η  πρωτεύουσα  του  νησιού  Λευκωσία,  και  η  παραθαλάσσια  πόλη  της Αμμοχώστου  εξελίσσονται  σε  μεγάλα  αστικά  και  εμπορικά  κέντρα,  με έντονη οικονομική δραστηριότητα. Κατά το Μεσαίωνα, η Κύπρος παράγει υψηλής ποιότητας ζάχαρη, εξαίρετο κρασί και άλλα αγροτικά προϊόντα. Την ίδια περίοδο αναπτύσσεται η βιοτεχνία υφαντών και κεντημάτων. Μια άλλη ανθούσα βιοτεχνία ήταν η παραγωγή εφυαλωμένων κεραμικών αγγείων που προορίζονται όχι μόνο για την κάλυψη τοπικών αναγκών, αλλά και για εξαγωγή.Τα γοτθικά μνημεία που διασώζονται από την περίοδο της Φραγκοκρατίας είναι  κυρίως  ναοί  και  κάστρα  που  συνδυάζουν  βυζαντινά  και  δυτικά στοιχεία. Η εκκλησία της Αγ. Σοφίας στη Λευκωσία, ο καθεδρικός ναός του Αγ. Νικολάου στην Αμμόχωστο και το Αββαείο του Μπέλαπαϊς είναι μερικά από τα πιο γνωστά οικοδομήματα.",
-      },
-      {
-        identifier: "venice",
-        text:
-          "The  last  queen  of  Cyprus,  Caterina  Cornaro,  wife  of  King  James  II  and  sister of Venetian nobleman Andreas Cornaro ceded the island to Venice in 1489, where upon Cyprus became part of “the Most Serene Republic” of Venice. This resulted in the definitive ousting of the Genoans from the island and the prevalence of Venetian rule. Venice’s main aim was to secure a firm hold of Cyprus that would allow the unimpeded movement and supply of Venetian ships in the Eastern Mediterranean.The main agricultural products that the island exported were wheat, barley,  sugar,  cotton,  wine  and  olive  oil.  The  main  cottage  industry  was textiles, while at the same time lace was beginning to be produced in  the  village  of  Lefkara.  Most  exports  were  shipped  out  of  the  port  of  Ammochostos.  Towards  the  end  of  Venetian  rule,  Larnaka  became  the  most  important  port  of  Cyprus,  from  where  salt  was  exported.  The  port  of Lemesos also started to develop at this time. When  the  Ottomans  conquered  the  island  of  Rhodes  in  1522,  the  Venetians were alerted to the danger of losing Cyprus. Hence they built fortifying  walls  around  Lefkosia  and  strengthened  the  existing  walls  of  Ammochostos,  on  whose  sea  side  stood  the  tower  of  Othello,  known    from the Shakespeare tragedy.",
-        textGR: "13ΙΣΤΟΡΙΑ ΤΗΣ ΚΥΠΡΟΥΟι Ενετοί στην ΚύπροΗ  τελευταία  βασίλισσα  της  Κύπρου,  Αικατερίνη  Κορνάρο,  σύζυγος  του βασιλιά  Ιάκωβου  Β’  και  αδελφή  του  ενετού  ευγενή  Ανδρέα  Κορνάρο, παραχωρεί το νησί στους Ενετούς το 1489 και η Κύπρος υπάγεται στη “Γαληνότατη  Δημοκρατία”  της  Βενετίας.  Αυτό  είχε  ως  αποτέλεσμα  τον οριστικό  εκτοπισμό  των  Γενουατών  από  το  νησί  και  την  κυριαρχία  των Ενετών. Βασική επιδίωξη της Βενετίας ήταν η διασφάλιση της σταθερής κατοχής  της  Κύπρου,  που  θα  επέτρεπε  την  απρόσκοπτη  διακίνηση  και ανεφοδιασμό των ενετικών πλοίων στην Ανατολική Μεσόγειο.Τα κυριότερα γεωργικά προϊόντα του νησιού που εξάγονταν στο εξωτερικό, ήταν το σιτάρι, το κριθάρι, η ζάχαρη, το βαμβάκι, το κρασί και το ελαιόλαδο. Η  κυριότερη  βιοτεχνία  ήταν  η  υφαντουργία,  ενώ  άρχισε  παράλληλα να  αναπτύσσεται  στην  περιοχή  του  χωριού  Λεύκαρα  η  βιοτεχνία  των λευκαρίτικων κεντημάτων. Το μεγαλύτερο μέρος του εξαγωγικού εμπορίου διεξαγόταν από το λιμάνι της Αμμοχώστου. Προς το τέλος της Ενετοκρατίας η Λάρνακα γίνεται το σημαντικότερο λιμάνι της Κύπρου. Από εκεί εξαγόταν το αλάτι. Την ίδια εποχή αναπτύσσεται και το λιμάνι της Λεμεσού.Με την κατάληψη του νησιού της Ρόδου από τους Οθωμανούς το 1522, και συνειδητοποιώντας τη σοβαρότητα του κινδύνου, έκτισαν τα νέα τείχη της  Λευκωσίας  και  ενίσχυσαν  τα  τείχη  της  Αμμοχώστου.  Στην  πλευρά του τείχους της Αμμοχώστου προς τη θάλασσα βρίσκεται ο πύργος του Οθέλλου, γνωστός από την ομώνυμη τραγωδία του Σαίξπηρ.",
-      },
-      {
-        identifier: "ottomans",
-        text:
-          "The period of Ottoman rule in Cyprus began with the fall of Ammochostos in 1571. The Latins were expelled from the island and a Moslem community was established in Cyprus for the first time. Privileges were given to the Orthodox Church of Cyprus from the beginning of Ottoman rule, giving it not just religious authority but also political authority.Cyprus went through hard times during Ottoman rule. The contribution of the Greek Cypriots to the Greek War of Independence in 1821 resulted in the  execution  of  Cyprus  Archbishop  Kyprianos,  three  of  his  bishops  and  about 470 clerics and laymen.Since  the  early  18th  century,  there  took  place  a  positive  social  and  economic resurgence in the lives of Greek Cypriots and Greeks, alongside the parallel decline of the Ottoman Empire.The  trading  activities  of  Europeans  in  the  coastal  towns  of  Cyprus  and  the establishment of foreign consular offices in Larnaka marked the start of a change in the social fabric of the island, from agricultural and semi-feudal  as  it  was  in  previous  periods,  to  semi-urban  in  the  coastal  towns.  This social change was strengthened by the close contacts of the Greeks of Cyprus with the newly independent Greek state that emerged after the Greek War of Independence. These first urbanised townsfolk began to express the first strong nationalist sentiments.",
-        textGR: "Με  την  άλωση  της  Αμμοχώστου  το  1571  αρχίζει  η  περίοδος  της Τουρκοκρατίας στη Κύπρο. Οι Λατίνοι εκδιώκονται από το νησί και για πρώτη φορά δημιουργείται μουσουλμανικός πυρήνας στην Κύπρο. Από την αρχή της Τουρκοκρατίας παραχωρούνται προνόμια στην ορθόδοξη Εκκλησία της Κύπρου, η οποία και απέκτησε το δικαίωμα να ασκεί όχι μόνο θρησκευτική, αλλά και πολιτική εξουσία. Οι Κύπριοι πέρασαν σκληρές δοκιμασίες στα χρόνια της Τουρκοκρατίας. Η συμβολή του κυπριακού ελληνισμού στην Ελληνική Επανάσταση το 1821 είχε  ως  αποτέλεσμα  την  εκτέλεση  του  Αρχιεπισκόπου  Κυπριανού,  των τριών επισκόπων και 470 περίπου κληρικών και λαϊκών.Από  τις  αρχές  του  18ου  αιώνα  αρχίζει  μια  πορεία  κοινωνικής  και οικονομικής ανάκαμψης του κυπριακού, όπως και του λοιπού ελληνισμού, η οποία βαδίζει παράλληλα με την παρακμή της Οθωμανικής Αυτοκρατορίας. Η εμπορική δραστηριότητα των Ευρωπαίων στις παράλιες πόλεις της Κύπρου και  η  εγκατάσταση  προξενείων  στη  Λάρνακα  σηματοδοτούν  την  απαρχή μιας διαφοροποίησης στην κοινωνική δομή του νησιού, που από αγροτική και  ημιφεουδαρχική  κατά  τη  διάρκεια  των  προηγούμενων  περιόδων,  θα μετατραπεί  αργότερα  σε  περιορισμένη  αστική  στις  παράλιες  πόλεις.  Την κοινωνική  διαφοροποίηση  ενίσχυσε  και  η  επικοινωνία  του  κυπριακού ελληνισμού  με  τον  ελληνισμό  του  ανεξάρτητου  ελληνικού  κράτους,  που προέκυψε μετά την ελληνική επανάσταση. Οι πρώτοι αστοί εκφράζουν και τα πρώτα εθνικά αιτήματα.",
-      },
-      {
-        identifier: "english",
-        text:
-          "In 1878, under a secret treaty established between Great Britain and the Ottomans, Cyprus was ceded to the former. Despite early expectations of Cypriots that there would be substantial changes in their political, economic and social lives and that their desire for union of Cyprus with Greece would be fulfilled, these did not materialise. Greek Cypriot disappointment with British colonial rule together with the prevailing economic recession, led to  the  uprising  events  of  October  1931.  These  events  resulted  in  even  harsher colonial measures being imposed by the British.The Greeks of Cyprus continued to press on with their demand for national restitution  and  union  with  Greece  but  the  British  government  continued  to  reject  it.  On  15  January  1950  a  referendum  on  union  “Enosis”  with  Greece was held, in which 95,7% of Greek Cypriots voted in favour. The referendum outcome had no effect on the British stance. On 20 October 1950  the  Bishop  of  Kition  Makarios  III  was  elected  as  Archbishop.  The  political deadlock the Greek Cypriots faced led to the waging of the national liberation anticolonial struggle of 1955-59, by the National Organisation of Cypriot Fighters (EOKA). The struggle resulted in the ending of British rule, but not to union with Greece. The Zurich-London Agreements led to the establishment of the independent Republic of Cyprus. On 13 December 1959 Archbishop Makarios III was elected first President of the Republic and Dr Fazil Kutchuk first Vice President.",
-        textGR: "Το 1878, με μυστική συμφωνία που έγινε μεταξύ της Μ. Βρετανίας και των  Οθωμανών,  η  Κύπρος  παραχωρείται  στη  Μ.  Βρετανία.  Παρά  τις προσδοκίες  των  Κυπρίων  για  ουσιαστικές  μεταβολές  στην  πολιτική, οικονομική και κοινωνική ζωή και στο αίτημά τους για Ένωση της Κύπρου με την Ελλάδα, οι προσδοκίες τους δεν εκπληρώθηκαν. Η απογοήτευση του ελληνισμού της Κύπρου από τη βρετανική στάση στο εθνικό ζήτημα και η οικονομική δυσπραγία οδήγησαν στο κίνημα του 1931 (τα Οκτωβριανά).  Το αποτέλεσμα της αντιαποικιακής εξέγερσης του 1931 ήταν   η εφαρμογή ακόμα πιο σκληρής αποικιακής πολιτικής από τους Άγγλους. Οι Έλληνες της Κύπρου συνέχισαν να προβάλλουν το αίτημα για εθνική αποκατάσταση και Ένωση με την Ελλάδα, αλλά η απόρριψη της Βρετανικής κυβέρνησης συνεχιζόταν. Στις 15 Ιανουαρίου 1950 διενεργείται το ενωτικό δημοψήφισμα και σ’ αυτό το 95,7% των Ελλήνων Κυπρίων ψηφίζουν υπέρ της  Ένωσης.  Ούτε  το  δημοψήφισμα  έφερε  ουσιαστικό  αποτέλεσμα.  Στις 20 Οκτωβρίου 1950 εκλέγεται Αρχιεπίσκοπος ο Μακάριος Γ’, μέχρι τότε Μητροπολίτης Κιτίου. Τα πολιτικά αδιέξοδα που αντιμετωπίζει ο κυπριακός λαός τον εξωθούν στην ανάληψη του ένοπλου απελευθερωτικού αγώνα του 1955-59, από την Εθνική Οργάνωση Κυπρίων Αγωνιστών (ΕΟΚΑ). Ο αγώνας είχε ως αποτέλεσμα την απελευθέρωση μεν της Κύπρου από την Αγγλία, όχι όμως την Ένωσή της με την Ελλάδα. Οι συμφωνίες Ζυρίχης-Λονδίνου  οδηγούν  στην  ίδρυση  ανεξάρτητου  Κυπριακού  κράτους.  Στις 13  Δεκεμβρίου  1959  ο  Αρχιεπίσκοπος  Μακάριος  Γ’  εκλέγεται  πρώτος Πρόεδρος της Κυπριακής Δημοκρατίας και ο Δρ Φαζίλ Κουτσιούκ πρώτος αντιπρόεδρος. ",
-      },
-      {
-        identifier: "independence",
-        text:
-          "The  Republic  of  Cyprus  was  proclaimed  on  16  August  1960.  The  island  became a member of the United Nations, the Commonwealth, the Council of  Europe  and  the  Non-Aligned  Movement.  On  the  basis  of  the  Zurich-London agreements Britain maintained two sovereign military bases on the island with a total combined area of 158,4 square kilometres, consisting of  Dhekelia  to  the  east  of  Larnaka  and  Akrotiri-Episkopi  near  Lemesos.  Two  treaties  were  signed  as  part  of  the  Zurich-London  agreements,  the  Treaty of Alliance and the Treaty of Guarantee. The latter gave the right to the three guarantor powers, Britain, Turkey and Greece, to take action in the event that the provisions of the Treaty were violated.Although   the   Cyprus   constitution   safeguarded   the   basic   rights   and   freedoms of all its citizens, it contained community provisions that made it  complex  and  non-workable.  In  1963  the  President  of  the  Republic  proposed  constitutional  amendments  which  both  the  Turkish  Cypriot  community leadership and Turkey rejected.The  Turkish  Cypriots  withdrew  from  the  government  and  proceeded  to  set up an illegal “Temporary Turkish Cypriot Adminstration”. As a result of  subsequent  inter-communal  conflict  that  ensued  at  the  beginning  of  1964,  a  United  Nations  Security  Council  resolution  established  a  U.N  Peace Keeping Force in Cyprus.In 1974 the military junta ruling Greece at the time staged a military coup in Cyprus aiming at the overthrow of elected President Makarios. Turkey used the coup as a pretext to invade militarily the island on 20 July 1974 and occupy 37% of the territory of the Republic of Cyprus, displacing about 200000  Greek  Cypriots  from  the  occupied  northern  part  of  the  island.  Despite  international  condemnation  of  Turkey  and  the  acknowledgement  of  the  rights  of  the  Cypriot  people  drafted  in  various  resolutions  issued  by the United Nations, the Security Council, the Commonwealth, the Non-Aligned  Movement  and  other  international  organisations,  Turkish  troops  still illegally occupy the northern part of Cyprus. On the1st of May 2004, with its northern part still under occupation, Cyprus became a full member of  the  European  Union.  The  accession  act  included  a  protocol  which  states that implementation of the acquis communautaire on the areas not controlled by the Cyprus government (as a result of the Turkish invasion) is  suspended.  This  suspension  will  be  removed  as  soon  as  the  Cyprus  problem  is  solved.  Efforts  and  negotiations  to  find  a  just  and  functional  solution to the Cyprus problem are continuing.",
-        textGR: "Στις  16  Αυγούστου  1960  ανακηρύσσεται  επίσημα  η  Κυπριακή Δημοκρατία.  Το  Κυπριακό  κράτος  γίνεται  μέλος  των  Ηνωμένων  Εθνών, της Κοινοπολιτείας, του Συμβουλίου της Ευρώπης και του Κινήματος των Αδεσμεύτων.  Με  βάση  τις  συνθήκες  Ζυρίχης-Λονδίνου,  η  Μ.  Βρετανία διατηρεί στην Κύπρο δύο κυρίαρχες στρατιωτικές βάσεις εκτάσεως 253,47 τετραγωνικών  χιλιομέτρων  στη  Δεκέλεια,  ανατολικά  της  Λάρνακας  και στην περιοχή Ακρωτηρίου-Επισκοπής, κοντά στη Λεμεσό. Δύο συνθήκες υπογράφτηκαν στα πλαίσια των συνθηκών Ζυρίχης-Λονδίνου, η Συνθήκη Συμμαχίας και η Συνθήκη Εγγυήσεως. Η τελευταία έδινε το δικαίωμα στις τρεις εγγυήτριες δυνάμεις, τη Μ. Βρετανία, την Τουρκία και την Ελλάδα να αναλάβουν δράση σε περίπτωση παραβίασης των διατάξεων της Συνθήκης.Παρόλο που το σύνταγμα της Κύπρου διασφάλιζε τις βασικές ελευθερίες και τα δικαιώματα των πολιτών, εμπεριείχε στοιχεία που το καθιστούσαν ανεφάρμοστο.  Το  1963  ο  Πρόεδρος  της  Δημοκρατίας  προτείνει τροποποιήσεις  τις  οποίες  απορρίπτει  η  Τουρκοκυπριακή  ηγεσία  και  η Τουρκία. Από το 1963 οι Τουρκοκύπριοι αποχωρούν από τη διακυβέρνηση της  Κυπριακής  Δημοκρατίας  και  προχωρούν  στη  σύσταση  παράνομης ‘Προσωρινής  Τουρκοκυπριακής  Διοίκησης’.  Από  τις  αρχές  του  1964, λόγω  των  διακοινοτικών  ταραχών  και  ύστερα  από  σχετική  απόφαση του  Συμβουλίου  Ασφαλείας,  στο  νησί  εδρεύει  Ειρηνευτική  Δύναμη  των Ηνωμένων Εθνών. Το  1974,  η  στρατιωτική  χούντα  στην  Ελλάδα  οργανώνει  στρατιωτικό πραξικόπημα στην Κύπρο, με σκοπό την ανατροπή του Προέδρου Μακαρίου. Με αφορμή το πραξικόπημα, στις 20 Ιουλίου 1974, η Τουρκία εισβάλλει στην  Κύπρο,  καταλαμβάνοντας  το  37%  του  εδάφους  της  Κυπριακής Δημοκρατίας  και  εκτοπίζει  περίπου  200.000  Ελληνοκύπριους  από  το βόρειο  τμήμα  της  Κύπρου.  Παρά  τη  διεθνή  καταδίκη  της  Τουρκίας  και την αναγνώριση των δίκαιων του κυπριακού λαού που περιλαμβάνονται σε  ψηφίσματα  των  Ηνωμένων  Εθνών,  του  Συμβουλίου  Ασφαλείας,  της Κοινοπολιτείας,  των  Αδεσμεύτων  και  άλλων  διεθνών  οργανισμών, τα  τουρκικά  στρατεύματα  κατέχουν  παράνομα  μέχρι  σήμερα  το  βόρειο τμήμα του νησιού. Η Κύπρος, με κατεχόμενο το βόρειο τμήμα του νησιού, γίνεται πλήρες μέλος της Ευρωπαϊκής Ένωσης, την 1η Μαΐου 2004. Στην πράξη  προσχώρησης  της  Κύπρου  στην  Ευρωπαϊκή  Ένωση  περιέχεται πρωτόκολλο,  στο  οποίο  αναφέρεται  ότι  αναστέλλεται  η  εφαρμογή  του κοινοτικού  κεκτημένου  στις  περιοχές  της  Κυπριακής  Δημοκρατίας  στις οποίες η Κυπριακή Κυβέρνηση δεν ασκεί αποτελεσματικό έλεγχο (ένεκα της τουρκικής κατοχής). Η αναστολή θα αρθεί, μόλις επιλυθεί το Κυπριακό. Οι προσπάθειες και οι διαπραγματεύσεις για μια δίκαιη και λειτουργική λύση του Κυπριακού προβλήματος συνεχίζονται.",
-      },
-    ];
-
-    var quoteNum = Math.floor(Math.random() * 10);
-
-    setEnglish = () => {
-      generalFeatures.map((obj) => {
-        document.querySelector(obj.selector).innerHTML = obj.text;
-      });
-      document.getElementById("fact").innerHTML = quotes[quoteNum].text;
-      document.getElementById("en").classList.add("selected-language");
-      document.getElementById("gr").classList.remove("selected-language");
-      lang = "en";
-    };
-
-    setGreek = () => {
-      generalFeatures.map((obj) => {
-        document.querySelector(obj.selector).innerHTML = obj.textGR;
-      });
-      document.getElementById("fact").innerHTML = quotes[quoteNum].textGR;
-      document.getElementById("en").classList.remove("selected-language");
-      document.getElementById("gr").classList.add("selected-language");
-      lang = "gr";
-    };
-
-    clickEra = (obj) => {
-      let id = obj.id;
-      let heading = document.querySelector("#" + id + " h3").innerHTML;
-      let descriptionObj = descriptions.filter((x) => x.identifier == id);
-
-      document.querySelector("#details h2").innerHTML = heading;
-
-      if (lang == "en") {
-        document.querySelector("#details p").innerHTML = descriptionObj[0].text;
-      } else {
-        document.querySelector("#details p").innerHTML =
-          descriptionObj[0].textGR;
-      }
-      document.getElementById("overlay").classList.add("visible");
-      document.querySelector(".mainContent").classList.add("no-overflow");
-      document.getElementById("details").classList.add("show");
-    };
-
-    closeEra = () => {
-      document.getElementById("overlay").classList.remove("visible");
-      document.querySelector(".mainContent").classList.remove("no-overflow");
-      document.getElementById("details").classList.remove("show");
-    };
-
-    setEnglish();
-  </script>
+  
 </html>
