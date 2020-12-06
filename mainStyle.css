@@ -112,7 +112,8 @@ article h3 {
 }
 
 .extras nav span {
-  justify-self: center;
+  display: flex;
+  justify-content: center;
   font-weight: 600;
 }
 
@@ -280,7 +281,9 @@ img#en {
 
 #details h2{
   font-size: 1.2em;
-  padding: 18px 0px 36px 24px;
+  padding: 18px 0px 36px 0px;
+  margin: 0px 24px 0px 24px;
+  border-bottom: 2px solid  rgba(49, 94, 73, 1);
 }
 
 #overlay{
