@@ -12,18 +12,19 @@
     <header>
       <img class="logo" src="pictures/olive4.png" alt="olive tree green" />
       <h1 id="title" class="title">A Cyprus chronicle.</h1>
-      <img class="menu-icon" src="pictures/menu.png" alt />
-      <nav class="navBar">
-        <a id="about-me" href=""></a>
-        <img id="gr" src="pictures/greece.png" alt="greek flag" onclick="setGreek();" />
-        <img
-          id="en"
-          src="pictures/united-kingdom.png"
-          alt="british flag"
-          onclick="setEnglish();"
-        />
-      </nav>
+      <img  class="menu-icon" src="pictures/menu.png" alt="menu icon" onclick="openMenu()"/>
     </header>
+    <nav id= "navBar" class="navBar">
+     
+     
+      <img id="gr" src="pictures/greece.png" alt="greek flag" onclick="setGreek()" />
+      <img
+        id="en"
+        src="pictures/united-kingdom.png"
+        alt="british flag"
+        onclick="setEnglish()"
+      />
+    </nav>
     <aside class="extras">
       <nav>
         <span id="linkTitle"></span>
@@ -110,7 +111,6 @@
           text: "A Cyprus chronicle.",
           textGR: "Χρονικό της Κύπρου.",
         },
-        { selector: "#about-me", text: "About me", textGR: "Για εμένα" },
         {
           selector: ".mainContent h2",
           text: "10000 years of history",
@@ -281,7 +281,7 @@
           identifier: "venice",
           text:
             "The  last  queen  of  Cyprus,  Caterina  Cornaro,  wife  of  King  James  II  and  sister of Venetian nobleman Andreas Cornaro ceded the island to Venice in 1489, where upon Cyprus became part of “the Most Serene Republic” of Venice. This resulted in the definitive ousting of the Genoans from the island and the prevalence of Venetian rule. Venice’s main aim was to secure a firm hold of Cyprus that would allow the unimpeded movement and supply of Venetian ships in the Eastern Mediterranean.The main agricultural products that the island exported were wheat, barley,  sugar,  cotton,  wine  and  olive  oil.  The  main  cottage  industry  was textiles, while at the same time lace was beginning to be produced in  the  village  of  Lefkara.  Most  exports  were  shipped  out  of  the  port  of  Ammochostos.  Towards  the  end  of  Venetian  rule,  Larnaka  became  the  most  important  port  of  Cyprus,  from  where  salt  was  exported.  The  port  of Lemesos also started to develop at this time. When  the  Ottomans  conquered  the  island  of  Rhodes  in  1522,  the  Venetians were alerted to the danger of losing Cyprus. Hence they built fortifying  walls  around  Lefkosia  and  strengthened  the  existing  walls  of  Ammochostos,  on  whose  sea  side  stood  the  tower  of  Othello,  known    from the Shakespeare tragedy.",
-          textGR: "13ΙΣΤΟΡΙΑ ΤΗΣ ΚΥΠΡΟΥΟι Ενετοί στην ΚύπροΗ  τελευταία  βασίλισσα  της  Κύπρου,  Αικατερίνη  Κορνάρο,  σύζυγος  του βασιλιά  Ιάκωβου  Β’  και  αδελφή  του  ενετού  ευγενή  Ανδρέα  Κορνάρο, παραχωρεί το νησί στους Ενετούς το 1489 και η Κύπρος υπάγεται στη “Γαληνότατη  Δημοκρατία”  της  Βενετίας.  Αυτό  είχε  ως  αποτέλεσμα  τον οριστικό  εκτοπισμό  των  Γενουατών  από  το  νησί  και  την  κυριαρχία  των Ενετών. Βασική επιδίωξη της Βενετίας ήταν η διασφάλιση της σταθερής κατοχής  της  Κύπρου,  που  θα  επέτρεπε  την  απρόσκοπτη  διακίνηση  και ανεφοδιασμό των ενετικών πλοίων στην Ανατολική Μεσόγειο.Τα κυριότερα γεωργικά προϊόντα του νησιού που εξάγονταν στο εξωτερικό, ήταν το σιτάρι, το κριθάρι, η ζάχαρη, το βαμβάκι, το κρασί και το ελαιόλαδο. Η  κυριότερη  βιοτεχνία  ήταν  η  υφαντουργία,  ενώ  άρχισε  παράλληλα να  αναπτύσσεται  στην  περιοχή  του  χωριού  Λεύκαρα  η  βιοτεχνία  των λευκαρίτικων κεντημάτων. Το μεγαλύτερο μέρος του εξαγωγικού εμπορίου διεξαγόταν από το λιμάνι της Αμμοχώστου. Προς το τέλος της Ενετοκρατίας η Λάρνακα γίνεται το σημαντικότερο λιμάνι της Κύπρου. Από εκεί εξαγόταν το αλάτι. Την ίδια εποχή αναπτύσσεται και το λιμάνι της Λεμεσού.Με την κατάληψη του νησιού της Ρόδου από τους Οθωμανούς το 1522, και συνειδητοποιώντας τη σοβαρότητα του κινδύνου, έκτισαν τα νέα τείχη της  Λευκωσίας  και  ενίσχυσαν  τα  τείχη  της  Αμμοχώστου.  Στην  πλευρά του τείχους της Αμμοχώστου προς τη θάλασσα βρίσκεται ο πύργος του Οθέλλου, γνωστός από την ομώνυμη τραγωδία του Σαίξπηρ.",
+          textGR: "Η  τελευταία  βασίλισσα  της  Κύπρου,  Αικατερίνη  Κορνάρο,  σύζυγος  του βασιλιά  Ιάκωβου  Β’  και  αδελφή  του  ενετού  ευγενή  Ανδρέα  Κορνάρο, παραχωρεί το νησί στους Ενετούς το 1489 και η Κύπρος υπάγεται στη “Γαληνότατη  Δημοκρατία”  της  Βενετίας.  Αυτό  είχε  ως  αποτέλεσμα  τον οριστικό  εκτοπισμό  των  Γενουατών  από  το  νησί  και  την  κυριαρχία  των Ενετών. Βασική επιδίωξη της Βενετίας ήταν η διασφάλιση της σταθερής κατοχής  της  Κύπρου,  που  θα  επέτρεπε  την  απρόσκοπτη  διακίνηση  και ανεφοδιασμό των ενετικών πλοίων στην Ανατολική Μεσόγειο.Τα κυριότερα γεωργικά προϊόντα του νησιού που εξάγονταν στο εξωτερικό, ήταν το σιτάρι, το κριθάρι, η ζάχαρη, το βαμβάκι, το κρασί και το ελαιόλαδο. Η  κυριότερη  βιοτεχνία  ήταν  η  υφαντουργία,  ενώ  άρχισε  παράλληλα να  αναπτύσσεται  στην  περιοχή  του  χωριού  Λεύκαρα  η  βιοτεχνία  των λευκαρίτικων κεντημάτων. Το μεγαλύτερο μέρος του εξαγωγικού εμπορίου διεξαγόταν από το λιμάνι της Αμμοχώστου. Προς το τέλος της Ενετοκρατίας η Λάρνακα γίνεται το σημαντικότερο λιμάνι της Κύπρου. Από εκεί εξαγόταν το αλάτι. Την ίδια εποχή αναπτύσσεται και το λιμάνι της Λεμεσού.Με την κατάληψη του νησιού της Ρόδου από τους Οθωμανούς το 1522, και συνειδητοποιώντας τη σοβαρότητα του κινδύνου, έκτισαν τα νέα τείχη της  Λευκωσίας  και  ενίσχυσαν  τα  τείχη  της  Αμμοχώστου.  Στην  πλευρά του τείχους της Αμμοχώστου προς τη θάλασσα βρίσκεται ο πύργος του Οθέλλου, γνωστός από την ομώνυμη τραγωδία του Σαίξπηρ.",
         },
         {
           identifier: "ottomans",
@@ -303,6 +303,12 @@
         },
       ];
   
+      const openMenu = () => {
+        document.getElementById("navBar").classList.add("pill");
+        document.getElementById("overlay").classList.add("visible");
+      }
+
+
       var quoteNum = Math.floor(Math.random() * 10);
   
       setEnglish = () => {

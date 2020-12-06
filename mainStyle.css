@@ -11,7 +11,7 @@ body {
 
 header {
   display: grid;
-  grid-template-columns: 20% 50% 20%;
+  grid-template-columns: 20% 50% 17%;
   column-gap: 24px;
   grid-template-rows: 84px;
   text-align: center;
@@ -174,6 +174,9 @@ header .menu-icon {
 
 .navBar {
   display: none;
+  position: absolute;
+  right: 0px;
+  z-index: 3;
 }
 
 .navBar > a {
@@ -181,6 +184,38 @@ header .menu-icon {
   color: #7d869c;
   font-weight: 500;
   padding: 6px;
+}
+
+.navBar.pill{
+  display: grid;
+  position: fixed;
+  background-color: white;
+  opacity:1;
+  top: 96px;
+  right: 24px;
+  border-radius: 4px;
+  width: 120px;
+  height: 64px;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-row: border;
+  z-index: 20;
+}
+
+img#gr,
+img#en {
+  opacity: 0.4;
+  margin: 6px;
+  height: 24px;
+  width: 24px;
+  box-shadow: 1px 1px 4px 1px rgba(49, 94, 73, 1);
+  border-radius: 24px;
+}
+
+.selected-language{
+  opacity: 1 !important;
 }
 
 .no-overflow{
@@ -345,19 +380,7 @@ z-index: 10;
     justify-content: right;
   }
 
-  img#gr,
-  img#en {
-    opacity: 0.4;
-    margin: 6px;
-    height: 24px;
-    width: 24px;
-    box-shadow: 1px 1px 4px 1px rgba(49, 94, 73, 1);
-    border-radius: 24px;
-  }
 
-  .selected-language{
-    opacity: 1 !important;
-  }
   header .menu-icon {
     display: none;
   }
